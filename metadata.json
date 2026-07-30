@@ -1,0 +1,6 @@
+{
+  "name": "Saheli 莎荷丽 - 印度有机植物染发",
+  "description": "印度进口有机草本植物染发粉品牌官方展示网站，提供品牌故事、成分深度解析、产品图文配置接口、植物选色指南与真实用户口碑评测。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
