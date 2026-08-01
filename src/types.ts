@@ -43,6 +43,14 @@ export interface Certification {
   badgeText: string;
   description: string;
   iconName: string;
+  holder: string;
+  standard: string;
+  certificateNumber: string;
+  operationId: string;
+  firstCertified: string;
+  issued: string;
+  scope: string;
+  verificationUrl: string;
 }
 
 export interface ContentPathConfig {

@@ -5,7 +5,7 @@ import { Hero } from './components/Hero';
 import { BrandStoryPage } from './components/BrandStoryPage';
 import { IngredientAnalysisPage } from './components/IngredientAnalysisPage';
 import { ProductCatalog } from './components/ProductCatalog';
-import { ShieldCheck, Sparkles, BookOpen, Award } from 'lucide-react';
+import { ShieldCheck, Sparkles, BookOpen, Factory } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
@@ -33,9 +33,9 @@ export default function App() {
                   <div className="w-10 h-10 border border-white/40 text-white flex items-center justify-center font-bold mb-3">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
-                  <h3 className="font-serif text-xl font-medium">100% USDA 有机认证</h3>
+                  <h3 className="font-serif text-xl font-medium">Deepak Industries · USDA NOP</h3>
                   <p className="text-xs text-[#E5E2D9] leading-relaxed">
-                    源自印度索杰特 (Sojat) 绿洲契约农场，全程零农药、零化肥、零基因改造。
+                    经 Ecocert SAS 审核；认证范围以证书附录及 USDA 官方数据库为准。
                   </p>
                 </div>
 
@@ -48,11 +48,11 @@ export default function App() {
 
                 <div className="space-y-2">
                   <div className="w-10 h-10 border border-white/40 text-white flex items-center justify-center font-bold mb-3">
-                    <Award className="w-5 h-5" />
+                    <Factory className="w-5 h-5" />
                   </div>
-                  <h3 className="font-serif text-xl font-medium">三道 3000目 极细微粉</h3>
+                  <h3 className="font-serif text-xl font-medium">自有生产基础</h3>
                   <p className="text-xs text-[#E5E2D9] leading-relaxed">
-                    独家过布筛滤微粉工艺，搅拌如冰淇淋顺滑，涂抹均匀，清水瞬间冲洗干净。
+                    两家自有工厂，约 36,000 平方英尺总建筑面积，约 1,200 MT 年产能。
                   </p>
                 </div>
               </div>
@@ -69,7 +69,7 @@ export default function App() {
                     为什么品牌叫 <span className="italic text-[#5B6346]">Saheli</span> (莎荷丽)？
                   </h2>
                   <p className="text-sm text-gray-600 leading-relaxed font-sans">
-                    在印地语中，Saheli 意为“女性身边最知己的闺蜜”。我们深知白发与头皮敏感带来的苦恼，因此秉持古印度阿育吠陀自然智慧，为东方发质带来温暖、放心的纯植物养发时光。
+                    Deepak Industries 的企业历史始于 1978 年；Saheli 品牌于 1990 年在印度 Rajasthan 的 Sojat 开始发展。Saheli 希望成为自然护理过程中的伙伴。
                   </p>
                   <button
                     onClick={() => { setActiveTab('brand'); window.scrollTo(0, 0); }}

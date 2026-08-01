@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="space-y-6 text-left">
               {/* Organic Origin Editorial Badge */}
               <div className="inline-block px-3 py-1 border border-[#5B6346] text-[10px] uppercase tracking-widest text-[#5B6346] font-sans font-semibold">
-                100% Organic India Origin
+                Saheli · Sojat, India · Since 1990
               </div>
 
               {/* Main Headline */}
@@ -48,7 +48,7 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-4 text-xs text-[#2C2C2C] font-sans">
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
-                  <span>USDA 有机认证</span>
+                  <span>Deepak Industries · USDA NOP</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
