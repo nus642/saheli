@@ -7,14 +7,12 @@ import { IngredientAnalysisPage } from './components/IngredientAnalysisPage';
 import { ProductCatalog } from './components/ProductCatalog';
 import { ReviewsSection } from './components/ReviewsSection';
 import { ShadeCalculatorModal } from './components/ShadeCalculatorModal';
-import { ContentPathManagerModal } from './components/ContentPathManagerModal';
 import { UsageGuideModal } from './components/UsageGuideModal';
-import { Leaf, ShieldCheck, Sparkles, BookOpen, Calculator, FolderKanban, ArrowRight, Heart, Award, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Sparkles, BookOpen, Award } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
   const [isShadeCalcOpen, setIsShadeCalcOpen] = useState<boolean>(false);
-  const [isContentPathManagerOpen, setIsContentPathManagerOpen] = useState<boolean>(false);
   const [isUsageGuideOpen, setIsUsageGuideOpen] = useState<boolean>(false);
 
   return (
@@ -113,7 +111,6 @@ export default function App() {
             <ProductCatalog
               openShadeCalc={() => setIsShadeCalcOpen(true)}
               openUsageGuide={() => setIsUsageGuideOpen(true)}
-              openContentPathManager={() => setIsContentPathManagerOpen(true)}
             />
 
             {/* Reviews Section Component */}
@@ -123,16 +120,12 @@ export default function App() {
 
         {/* View 2: Brand Story Dedicated Page */}
         {activeTab === 'brand' && (
-          <BrandStoryPage
-            openContentPathManager={() => setIsContentPathManagerOpen(true)}
-            openUsageGuide={() => setIsUsageGuideOpen(true)}
-          />
+          <BrandStoryPage openUsageGuide={() => setIsUsageGuideOpen(true)} />
         )}
 
         {/* View 3: Ingredient Analysis Dedicated Page */}
         {activeTab === 'ingredients' && (
           <IngredientAnalysisPage
-            openContentPathManager={() => setIsContentPathManagerOpen(true)}
             openShadeCalc={() => setIsShadeCalcOpen(true)}
           />
         )}
@@ -142,7 +135,6 @@ export default function App() {
           <ProductCatalog
             openShadeCalc={() => setIsShadeCalcOpen(true)}
             openUsageGuide={() => setIsUsageGuideOpen(true)}
-            openContentPathManager={() => setIsContentPathManagerOpen(true)}
           />
         )}
 
@@ -157,11 +149,6 @@ export default function App() {
         isOpen={isShadeCalcOpen}
         onClose={() => setIsShadeCalcOpen(false)}
         setActiveTab={setActiveTab}
-      />
-
-      <ContentPathManagerModal
-        isOpen={isContentPathManagerOpen}
-        onClose={() => setIsContentPathManagerOpen(false)}
       />
 
       <UsageGuideModal
