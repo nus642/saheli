@@ -1,15 +1,9 @@
 import React, { useState } from 'react';
 import { HERB_INGREDIENTS } from '../data/initialData';
 import { HerbIngredient } from '../types';
-import { Leaf, ShieldCheck, Sparkles, CheckCircle2, XCircle, Info, ArrowRight, Activity, Microscope } from 'lucide-react';
+import { Leaf, ShieldCheck, Sparkles, CheckCircle2, XCircle, Info, Activity, Microscope } from 'lucide-react';
 
-interface IngredientAnalysisPageProps {
-  openShadeCalc: () => void;
-}
-
-export const IngredientAnalysisPage: React.FC<IngredientAnalysisPageProps> = ({
-  openShadeCalc,
-}) => {
+export const IngredientAnalysisPage: React.FC = () => {
   const [selectedHerb, setSelectedHerb] = useState<HerbIngredient>(HERB_INGREDIENTS[0]);
 
   return (
@@ -28,7 +22,7 @@ export const IngredientAnalysisPage: React.FC<IngredientAnalysisPageProps> = ({
           </h1>
 
           <p className="text-base text-gray-600 leading-relaxed font-sans">
-            拒绝隐瞒任何化学添加剂。Saheli 的每一包染发粉，均由 100% 单一或复方印度阿育吠陀经典植物微粉组成。不含防腐剂、不含重金属、不含对苯二胺 (PPD)。
+            Saheli 的染发粉分为单一植物微粉与复方植物微粉产品。
           </p>
         </div>
 
@@ -185,7 +179,7 @@ export const IngredientAnalysisPage: React.FC<IngredientAnalysisPageProps> = ({
                 <tr>
                   <td className="p-4 font-semibold text-[#2C2C2C] bg-[#FAF9F6]">头皮刺激与致敏风险</td>
                   <td className="p-4 text-red-900 bg-red-50/30">含对苯二胺 (PPD)，高概率引起头皮红肿、刺痛、刺痒甚至接触性皮炎。</td>
-                  <td className="p-4 text-[#2C2C2C] bg-[#F2F0E9]/50 font-medium">0% PPD，0 氨水，0 重金属。阿育吠陀草本具有天然清凉抑菌止痒调理效果。</td>
+                  <td className="p-4 text-[#2C2C2C] bg-[#F2F0E9]/50 font-medium">阿育吠陀草本配方与传统氧化染发体系不同。</td>
                 </tr>
                 <tr>
                   <td className="p-4 font-semibold text-[#2C2C2C] bg-[#FAF9F6]">气味体验</td>
@@ -243,13 +237,6 @@ export const IngredientAnalysisPage: React.FC<IngredientAnalysisPageProps> = ({
               </div>
             </div>
 
-            <button
-              onClick={openShadeCalc}
-              className="w-full py-3 bg-white text-[#5B6346] text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-colors cursor-pointer"
-            >
-              <span>立即使用“智能白发调配算盘”推算我的比例</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
           </div>
         </div>
 

@@ -1,16 +1,12 @@
 import React from 'react';
-import { Leaf, ShieldCheck, Sparkles, ArrowRight, Calculator, CheckCircle2, Award, HeartHandshake } from 'lucide-react';
+import { Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface HeroProps {
   setActiveTab: (tab: string) => void;
-  openShadeCalc: () => void;
-  openUsageGuide: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   setActiveTab,
-  openShadeCalc,
-  openUsageGuide,
 }) => {
   return (
     <section className="relative overflow-hidden bg-[#FAF9F6] border-b border-[#E5E2D9] pt-8 pb-16 lg:pt-12 lg:pb-20">
@@ -33,20 +29,11 @@ export const Hero: React.FC<HeroProps> = ({
 
               {/* Subtitle / Value Prop */}
               <p className="max-w-xl text-sm sm:text-base leading-relaxed text-gray-600 font-sans">
-                <strong className="text-[#2C2C2C] font-semibold">Saheli 莎荷丽</strong> 代理印度顶级拉贾斯坦邦索杰特头采有机海娜与木蓝植物粉。0 对苯二胺 (PPD)、0 氨水、0 重金属。天然包裹遮盖白发，为发丝带来温润本色。
+                <strong className="text-[#2C2C2C] font-semibold">Saheli 莎荷丽</strong> 代理印度拉贾斯坦邦索杰特海娜与木蓝植物粉。天然包裹遮盖白发，为发丝带来温润本色。
               </p>
 
               {/* CTAs */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  onClick={openShadeCalc}
-                  className="px-8 py-3.5 bg-[#5B6346] text-white text-xs uppercase tracking-widest hover:bg-[#4A5039] transition-colors flex items-center gap-2 cursor-pointer font-sans"
-                >
-                  <Calculator className="w-4 h-4 text-[#FAF9F6]" />
-                  <span>计算用量与发色算盘</span>
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
                 <button
                   onClick={() => { setActiveTab('products'); window.scrollTo(0, 0); }}
                   className="px-6 py-3.5 border border-[#5B6346] text-[#5B6346] text-xs uppercase tracking-widest hover:bg-[#5B6346] hover:text-white transition-colors cursor-pointer flex items-center gap-2 font-sans"
@@ -55,12 +42,6 @@ export const Hero: React.FC<HeroProps> = ({
                   <span>天然染发套组</span>
                 </button>
 
-                <button
-                  onClick={openUsageGuide}
-                  className="px-4 py-3 text-xs text-[#5B6346] underline font-sans uppercase tracking-wider hover:text-[#4A5039] transition-colors cursor-pointer"
-                >
-                  新手 6 步指南 →
-                </button>
               </div>
 
               {/* Key Feature Checklist - Fine Hairline Grid */}
@@ -71,7 +52,7 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
-                  <span>0% PPD 过敏源</span>
+                  <span>植物粉调配</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
@@ -87,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
-                  <span>孕妇及敏感头皮安心</span>
+                  <span>植物染发选择</span>
                 </div>
               </div>
             </div>
@@ -154,20 +135,6 @@ export const Hero: React.FC<HeroProps> = ({
                   <span className="text-xs text-[#5B6346] font-semibold">清洁 & 蓬松</span>
                 </div>
               </div>
-            </div>
-
-            {/* Rating Banner */}
-            <div className="p-4 border border-[#E5E2D9] bg-white flex items-center justify-between text-xs font-sans">
-              <div className="flex items-center gap-2">
-                <div className="text-lg font-bold text-[#5B6346] font-serif">4.9 / 5.0</div>
-                <div className="text-[11px] text-gray-500">超过 12,000+ 真实买家验货好评</div>
-              </div>
-              <button
-                onClick={() => { setActiveTab('reviews'); window.scrollTo(0, 0); }}
-                className="text-[10px] uppercase tracking-widest font-bold text-[#5B6346] underline"
-              >
-                查看评价 →
-              </button>
             </div>
 
           </div>

@@ -91,7 +91,7 @@ export const ShadeCalculatorModal: React.FC<ShadeCalculatorModalProps> = ({
       waterTemp: '55°C 温水 (靛蓝加1克食盐固色)',
       steepMin: 120,
       leaveInMin: '第一步1.5h，第二步2小时',
-      desc: '两步法染色呈现浓郁高质感乌黑，完全替代化学黑发剂。',
+      desc: '两步法染色呈现浓郁乌黑。',
     };
   };
 
@@ -277,7 +277,7 @@ export const ShadeCalculatorModal: React.FC<ShadeCalculatorModalProps> = ({
             }}
             className="w-full py-3 bg-[#5B6346] hover:bg-[#4A5039] text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
           >
-            <span>去选购此配方产品的套组</span>
+            <span>查看相关产品套组</span>
             <ArrowRight className="w-4 h-4 text-[#FAF9F6]" />
           </button>
         </div>

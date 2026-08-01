@@ -4,12 +4,10 @@ import { siteConfig } from '../config/siteConfig';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
-  openUsageGuide: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   setActiveTab,
-  openUsageGuide,
 }) => {
   return (
     <footer className="bg-[#2C2C2C] text-[#FAF9F6] pt-16 pb-12 border-t border-[#5B6346] font-sans">
@@ -23,8 +21,8 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
           <div className="flex flex-col items-center p-4 border border-white/10 bg-white/5">
             <Sparkles className="w-8 h-8 text-[#5B6346] mb-2" />
-            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">0% 对苯二胺 (PPD)</h4>
-            <p className="text-xs text-gray-400 mt-1">拒绝化学过敏与头皮伤害</p>
+            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">植物粉配方</h4>
+
           </div>
           <div className="flex flex-col items-center p-4 border border-white/10 bg-white/5">
             <Award className="w-8 h-8 text-[#5B6346] mb-2" />
@@ -75,16 +73,6 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button onClick={() => { setActiveTab('products'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors cursor-pointer">
                   • 植物产品与配方指南 (Products)
-                </button>
-              </li>
-              <li>
-                <button onClick={() => { setActiveTab('reviews'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors cursor-pointer">
-                  • 真实用户盖白发口碑 (Reviews)
-                </button>
-              </li>
-              <li>
-                <button onClick={openUsageGuide} className="hover:text-white transition-colors cursor-pointer">
-                  • 首次染发使用步骤图解
                 </button>
               </li>
             </ul>

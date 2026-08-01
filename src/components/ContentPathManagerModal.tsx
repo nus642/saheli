@@ -116,7 +116,6 @@ export const ContentPathManagerModal: React.FC<ContentPathManagerModalProps> = (
                 <div>📁 /assets/images/products/  <span className="text-gray-400">← 存放所有包装/草本粉产品图文</span></div>
                 <div>📁 /assets/images/ingredients/ <span className="text-gray-400">← 存放海娜、木蓝、余甘子等成分图</span></div>
                 <div>📁 /assets/images/brand/       <span className="text-gray-400">← 存放印度索杰特农场与品牌故事图</span></div>
-                <div>📁 /assets/images/reviews/     <span className="text-gray-400">← 存放真实用户盖白发前后对比图</span></div>
               </div>
             </div>
 
