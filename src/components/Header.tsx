@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Top Banner Notice */}
       <div className="bg-[#5B6346] text-[#FAF9F6] text-xs py-2 px-4 text-center font-sans-clean flex items-center justify-center gap-2 overflow-x-auto whitespace-nowrap">
         <span className="inline-flex items-center gap-1 bg-white/20 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider border border-white/30">
-          USDA Organic Certified
+          Deepak Industries · USDA NOP Certified
         </span>
         <span className="tracking-wide">来自印度索杰特 (Sojat) 的海娜与木蓝 · 天然包裹遮盖白发</span>
       </div>
@@ -56,7 +56,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               <p className="text-[10px] uppercase tracking-[0.2em] text-[#A5A093] font-sans">
-                100% Organic India Origin
+                Henna & Herbal Care Since 1990
               </p>
             </div>
           </button>

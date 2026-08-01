@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Leaf, ShieldCheck, Heart, Sparkles, Award } from 'lucide-react';
+import { ExternalLink, Leaf, ShieldCheck, Factory, Sparkles } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 interface FooterProps {
@@ -16,8 +16,8 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-white/10 text-center">
           <div className="flex flex-col items-center p-4 border border-white/10 bg-white/5">
             <ShieldCheck className="w-8 h-8 text-[#5B6346] mb-2" />
-            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">USDA 有机认证</h4>
-            <p className="text-xs text-gray-400 mt-1">100% 印度原料源头保证</p>
+            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">Deepak Industries · USDA NOP</h4>
+            <p className="text-xs text-gray-400 mt-1">认证范围以证书附录为准</p>
           </div>
           <div className="flex flex-col items-center p-4 border border-white/10 bg-white/5">
             <Sparkles className="w-8 h-8 text-[#5B6346] mb-2" />
@@ -25,14 +25,14 @@ export const Footer: React.FC<FooterProps> = ({
 
           </div>
           <div className="flex flex-col items-center p-4 border border-white/10 bg-white/5">
-            <Award className="w-8 h-8 text-[#5B6346] mb-2" />
-            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">索杰特 3000 目微粉</h4>
-            <p className="text-xs text-gray-400 mt-1">细腻易拌泥 · 轻松水冲净</p>
+            <Factory className="w-8 h-8 text-[#5B6346] mb-2" />
+            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">两家自有工厂</h4>
+            <p className="text-xs text-gray-400 mt-1">约 1,200 MT 年产能</p>
           </div>
           <div className="flex flex-col items-center p-4 border border-white/10 bg-white/5">
-            <Heart className="w-8 h-8 text-[#5B6346] mb-2" />
-            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">妇女公平贸易合作</h4>
-            <p className="text-xs text-gray-400 mt-1">支持印度当地采摘社群</p>
+            <Leaf className="w-8 h-8 text-[#5B6346] mb-2" />
+            <h4 className="font-serif font-bold text-white text-sm uppercase tracking-wider">始于 Sojat</h4>
+            <p className="text-xs text-gray-400 mt-1">海娜及草本护理产品</p>
           </div>
         </div>
 
@@ -107,11 +107,9 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="pt-8 border-t border-white/10 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} {siteConfig.siteName.en} {siteConfig.siteName.zh}. All Rights Reserved.</p>
           <div className="flex items-center gap-4 text-xs text-gray-400">
-            <span>100% 纯植物无添加</span>
+            <button onClick={() => { setActiveTab('brand'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors">查看认证范围</button>
             <span>•</span>
-            <span>海关进口检验合格</span>
-            <span>•</span>
-            <span>纯素非动物实验</span>
+            <a href="https://organic.ams.usda.gov/integrity/CP/OPP?cid=24&nopid=7880267101" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">USDA 官方查询</a>
           </div>
         </div>
       </div>

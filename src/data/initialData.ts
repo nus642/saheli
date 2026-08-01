@@ -194,48 +194,37 @@ export const HERB_INGREDIENTS: HerbIngredient[] = [
 
 export const BRAND_MILESTONES: BrandMilestone[] = [
   {
-    year: '1998',
-    title: '圣地索杰特 (Sojat) 绿洲契约农场',
-    description: '在印度拉贾斯坦邦被称为“海娜之都”的索杰特，Saheli 建立了首个 3000 亩有机合合作农场，坚持无农药、不使用化肥的古法日光种植。'
+    year: '1978',
+    title: 'Deepak Industries 企业基础建立',
+    description: 'Deepak Industries 的企业历史始于 1978 年；这一年份并非 Saheli 品牌的创立年份。'
   },
   {
-    year: '2008',
-    title: '妇女赋能与公平贸易 (Ethical Women Co-op)',
-    description: 'Saheli 品牌名称取自印地语“女性知己”。我们与当地 500+ 位女性采摘工建立公平贸易合作，保障其独立经济收入与健康医疗。'
+    year: '1990',
+    title: 'Saheli 品牌开始发展',
+    description: 'Saheli 品牌在印度 Rajasthan 的 Sojat 开始发展，专注海娜及草本护理产品。'
   },
   {
-    year: '2016',
-    title: '三道低温微粉筛滤技术 (Triple-Sifting Process)',
-    description: '研发出业界领先的冷磨超细微粉技术（ Cloth-Sifted Micro-Fine ），筛滤精度达到 100 目以上，一举解决传统草本染发粉难搅拌、难冲洗的痛点。'
-  },
-  {
-    year: '2023',
-    title: '走进中国市场，品质代理引入',
-    description: '通过严格的中国进口海关检验与有机品质复验，莎荷丽正式被引入国内，为数万受白发与敏感头皮困扰的东方女性带来纯净养发方案。'
+    year: '今日',
+    title: '稳定的自有生产基础',
+    description: '官方 Brand Deck 记载 Deepak Industries 拥有两家自有工厂，总建筑面积约 36,000 平方英尺，年产能约 1,200 MT。'
   }
 ];
 
 export const CERTIFICATIONS: Certification[] = [
   {
-    name: 'USDA Organic',
-    agency: '美国农业部有机认证',
-    badgeText: '100% 有机农产品',
-    description: '原料全程绝不使用化学合成农药、杀虫剂或化学生长激素。',
-    iconName: 'ShieldCheck'
-  },
-  {
-    name: 'ECOCERT',
-    agency: '欧盟有机生态认证',
-    badgeText: 'ECOCERT COSMOS',
-    description: '通过严苛的欧洲天然化妆品标准，确保可持久再生与环境友好。',
-    iconName: 'Leaf'
-  },
-  {
-    name: 'Cruelty-Free & Vegan',
-    agency: 'PETA 无残忍认证',
-    badgeText: '零动物实验 / 纯素',
-    description: '全线产品纯植物萃取，不含动物成分，绝不进行动物测试。',
-    iconName: 'Heart'
+    name: 'USDA National Organic Program',
+    agency: '认证机构：Ecocert SAS',
+    badgeText: 'Deepak Industries · USDA NOP',
+    description: 'Saheli 的经营主体 Deepak Industries 经 Ecocert 审核，获得美国 USDA National Organic Program 有机认证。认证范围覆盖证书附录所列的海娜粉、靛蓝粉及多种草本植物产品。',
+    iconName: 'ShieldCheck',
+    holder: 'Deepak Industries',
+    standard: 'USDA Organic Regulations, 7 CFR Part 205',
+    certificateNumber: '267101/202510280952',
+    operationId: '7880267101',
+    firstCertified: '2023年11月24日',
+    issued: '2025年10月28日',
+    scope: 'Handling / Processing',
+    verificationUrl: 'https://organic.ams.usda.gov/integrity/CP/OPP?cid=24&nopid=7880267101'
   }
 ];
 
