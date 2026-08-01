@@ -3,12 +3,10 @@ import { BRAND_MILESTONES, CERTIFICATIONS } from '../data/initialData';
 import { Leaf, Award, ShieldCheck, Heart, Sparkles, MapPin, CheckCircle, Users, Sun, Droplets } from 'lucide-react';
 
 interface BrandStoryPageProps {
-  openContentPathManager: () => void;
   openUsageGuide: () => void;
 }
 
 export const BrandStoryPage: React.FC<BrandStoryPageProps> = ({
-  openContentPathManager,
   openUsageGuide,
 }) => {
   return (
@@ -206,24 +204,6 @@ export const BrandStoryPage: React.FC<BrandStoryPageProps> = ({
             <span>•</span>
             <span>0 铅汞重金属</span>
           </div>
-        </div>
-
-        {/* Dynamic Image & Content Path Notice */}
-        <div className="p-6 bg-[#F2F0E9] border border-[#D8D4C7] flex flex-col sm:flex-row items-center justify-between gap-4 font-sans">
-          <div className="space-y-1 text-left">
-            <h4 className="font-serif text-[#2C2C2C] text-base font-bold">
-              需要在本地替换品牌故事的宣传图文？
-            </h4>
-            <p className="text-xs text-gray-600">
-              可以通过“图文输入配置接口”修改品牌图片路径（/assets/images/brand/...）或自定义文案。
-            </p>
-          </div>
-          <button
-            onClick={openContentPathManager}
-            className="px-5 py-2.5 bg-[#5B6346] text-white text-xs uppercase tracking-widest font-semibold hover:bg-[#4A5039] transition-colors cursor-pointer shrink-0"
-          >
-            打开图文输入配置
-          </button>
         </div>
 
       </div>

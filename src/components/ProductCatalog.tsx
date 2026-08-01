@@ -6,13 +6,11 @@ import { Sparkles, Star, Tag, CheckCircle2, Clock, Calculator, Eye, ShieldCheck,
 interface ProductCatalogProps {
   openShadeCalc: () => void;
   openUsageGuide: () => void;
-  openContentPathManager: () => void;
 }
 
 export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   openShadeCalc,
   openUsageGuide,
-  openContentPathManager,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
@@ -251,15 +249,6 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   <span>计算用量与发色算盘</span>
                 </button>
 
-                <button
-                  onClick={() => {
-                    setActiveProduct(null);
-                    openContentPathManager();
-                  }}
-                  className="py-3 px-4 border border-[#2C2C2C] text-[#2C2C2C] text-xs font-bold uppercase tracking-widest hover:bg-[#2C2C2C] hover:text-white transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-                >
-                  <span>修改图文路径</span>
-                </button>
               </div>
 
             </div>

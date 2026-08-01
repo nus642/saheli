@@ -4,12 +4,10 @@ import { HerbIngredient } from '../types';
 import { Leaf, ShieldCheck, Sparkles, CheckCircle2, XCircle, Info, ArrowRight, Activity, Microscope } from 'lucide-react';
 
 interface IngredientAnalysisPageProps {
-  openContentPathManager: () => void;
   openShadeCalc: () => void;
 }
 
 export const IngredientAnalysisPage: React.FC<IngredientAnalysisPageProps> = ({
-  openContentPathManager,
   openShadeCalc,
 }) => {
   const [selectedHerb, setSelectedHerb] = useState<HerbIngredient>(HERB_INGREDIENTS[0]);
