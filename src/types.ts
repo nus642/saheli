@@ -7,8 +7,6 @@ export interface Product {
   price: number;
   originalPrice?: number;
   weight: string;
-  rating: number;
-  reviewCount: number;
   tags: string[];
   imagePath: string; // Dynamic path or CDN URL
   description: string;
@@ -17,7 +15,6 @@ export interface Product {
   ingredients: string[];
   steepTimeHours: number;
   leaveInHours: string;
-  isBestSeller?: boolean;
 }
 
 export interface HerbIngredient {
@@ -32,22 +29,6 @@ export interface HerbIngredient {
   colorContribution: string;
   imagePath: string;
   ayurvedicProperty: string;
-}
-
-export interface Review {
-  id: string;
-  userName: string;
-  userAvatar?: string;
-  userTag: string; // e.g. "白发比例50% | 染自然深棕"
-  rating: number;
-  date: string;
-  productUsed: string;
-  content: string;
-  verifiedPurchase: boolean;
-  beforeImg?: string;
-  afterImg?: string;
-  tags: string[];
-  helpfulCount: number;
 }
 
 export interface BrandMilestone {
@@ -68,7 +49,6 @@ export interface ContentPathConfig {
   productImagePathBase: string;
   ingredientImagePathBase: string;
   brandStoryImagePathBase: string;
-  reviewImagePathBase: string;
   customProducts: Product[];
   lastUpdated: string;
 }

@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import { Leaf, Menu, X, SlidersHorizontal, Calculator, BookOpen, ShieldCheck, Sparkles } from 'lucide-react';
+import { Leaf, Menu, X, BookOpen, ShieldCheck, Sparkles } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 interface HeaderProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
-  openShadeCalc: () => void;
-  openUsageGuide: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
-  openShadeCalc,
-  openUsageGuide,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -22,7 +18,6 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'brand', label: '品牌故事', icon: BookOpen },
     { id: 'ingredients', label: '草本成分解析', icon: ShieldCheck },
     { id: 'products', label: '产品与配方', icon: Sparkles },
-    { id: 'reviews', label: '真实用户口碑', icon: SlidersHorizontal },
   ];
 
   const handleNavClick = (id: string) => {
@@ -38,13 +33,7 @@ export const Header: React.FC<HeaderProps> = ({
         <span className="inline-flex items-center gap-1 bg-white/20 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider border border-white/30">
           USDA Organic Certified
         </span>
-        <span className="tracking-wide">来自印度索杰特 (Sojat) 圣地纯净海娜与木蓝 · 0 氨 0 化学 PPD · 天然遮盖白发</span>
-        <button
-          onClick={openUsageGuide}
-          className="underline hover:text-white transition-colors cursor-pointer ml-2 text-xs font-medium text-[#FAF9F6]"
-        >
-          【初次使用说明】
-        </button>
+        <span className="tracking-wide">来自印度索杰特 (Sojat) 的海娜与木蓝 · 天然包裹遮盖白发</span>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -93,28 +82,9 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </nav>
 
-          {/* Action Buttons */}
-          <div className="hidden sm:flex items-center gap-3">
-            {/* Mix Calculator Launcher */}
-            <button
-              onClick={openShadeCalc}
-              className="px-4 py-2.5 rounded-sm border border-[#5B6346] text-[#5B6346] hover:bg-[#5B6346] hover:text-white text-xs uppercase tracking-wider font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
-            >
-              <Calculator className="w-4 h-4" />
-              <span>配方与算盘</span>
-            </button>
-
-          </div>
 
           {/* Mobile Menu Toggle */}
           <div className="flex sm:hidden items-center gap-2">
-            <button
-              onClick={openShadeCalc}
-              className="p-2 rounded-sm text-[#5B6346] border border-[#5B6346] text-xs"
-              title="调配算盘"
-            >
-              <Calculator className="w-5 h-5" />
-            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-sm text-[#2C2C2C] hover:bg-[#F2F0E9] transition-colors"
@@ -152,18 +122,6 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </div>
 
-          <div className="pt-3 border-t border-[#E5E2D9]">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openShadeCalc();
-              }}
-              className="w-full py-2.5 px-3 rounded-sm bg-[#5B6346] text-white text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-1.5"
-            >
-              <Calculator className="w-4 h-4" />
-              <span>染发配方算盘</span>
-            </button>
-          </div>
         </div>
       )}
     </header>

@@ -5,15 +5,10 @@ import { Hero } from './components/Hero';
 import { BrandStoryPage } from './components/BrandStoryPage';
 import { IngredientAnalysisPage } from './components/IngredientAnalysisPage';
 import { ProductCatalog } from './components/ProductCatalog';
-import { ReviewsSection } from './components/ReviewsSection';
-import { ShadeCalculatorModal } from './components/ShadeCalculatorModal';
-import { UsageGuideModal } from './components/UsageGuideModal';
 import { ShieldCheck, Sparkles, BookOpen, Award } from 'lucide-react';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
-  const [isShadeCalcOpen, setIsShadeCalcOpen] = useState<boolean>(false);
-  const [isUsageGuideOpen, setIsUsageGuideOpen] = useState<boolean>(false);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#2C2825] font-sans-clean">
@@ -21,8 +16,6 @@ export default function App() {
       <Header
         activeTab={activeTab}
         setActiveTab={setActiveTab}
-        openShadeCalc={() => setIsShadeCalcOpen(true)}
-        openUsageGuide={() => setIsUsageGuideOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -31,11 +24,7 @@ export default function App() {
         {activeTab === 'home' && (
           <div className="space-y-12">
             {/* Hero Section */}
-            <Hero
-              setActiveTab={setActiveTab}
-              openShadeCalc={() => setIsShadeCalcOpen(true)}
-              openUsageGuide={() => setIsUsageGuideOpen(true)}
-            />
+            <Hero setActiveTab={setActiveTab} />
 
             {/* Core Value Banner */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -54,10 +43,7 @@ export default function App() {
                   <div className="w-10 h-10 border border-white/40 text-white flex items-center justify-center font-bold mb-3">
                     <Sparkles className="w-5 h-5" />
                   </div>
-                  <h3 className="font-serif text-xl font-medium">0% 对苯二胺 (PPD)</h3>
-                  <p className="text-xs text-[#E5E2D9] leading-relaxed">
-                    拒绝传统化学过敏源与刺鼻双氧水。SGS化验权威背书，适合敏感肌与孕妈妈。
-                  </p>
+                  <h3 className="font-serif text-xl font-medium">植物粉配方</h3>
                 </div>
 
                 <div className="space-y-2">
@@ -108,59 +94,28 @@ export default function App() {
             </section>
 
             {/* Products Showcase Component */}
-            <ProductCatalog
-              openShadeCalc={() => setIsShadeCalcOpen(true)}
-              openUsageGuide={() => setIsUsageGuideOpen(true)}
-            />
-
-            {/* Reviews Section Component */}
-            <ReviewsSection openUsageGuide={() => setIsUsageGuideOpen(true)} />
+            <ProductCatalog />
           </div>
         )}
 
         {/* View 2: Brand Story Dedicated Page */}
         {activeTab === 'brand' && (
-          <BrandStoryPage openUsageGuide={() => setIsUsageGuideOpen(true)} />
+          <BrandStoryPage />
         )}
 
         {/* View 3: Ingredient Analysis Dedicated Page */}
         {activeTab === 'ingredients' && (
-          <IngredientAnalysisPage
-            openShadeCalc={() => setIsShadeCalcOpen(true)}
-          />
+          <IngredientAnalysisPage />
         )}
 
         {/* View 4: Product Catalog View */}
         {activeTab === 'products' && (
-          <ProductCatalog
-            openShadeCalc={() => setIsShadeCalcOpen(true)}
-            openUsageGuide={() => setIsUsageGuideOpen(true)}
-          />
-        )}
-
-        {/* View 5: Customer Reviews View */}
-        {activeTab === 'reviews' && (
-          <ReviewsSection openUsageGuide={() => setIsUsageGuideOpen(true)} />
+          <ProductCatalog />
         )}
       </main>
 
-      {/* Global Modals */}
-      <ShadeCalculatorModal
-        isOpen={isShadeCalcOpen}
-        onClose={() => setIsShadeCalcOpen(false)}
-        setActiveTab={setActiveTab}
-      />
-
-      <UsageGuideModal
-        isOpen={isUsageGuideOpen}
-        onClose={() => setIsUsageGuideOpen(false)}
-      />
-
       {/* Global Footer */}
-      <Footer
-        setActiveTab={setActiveTab}
-        openUsageGuide={() => setIsUsageGuideOpen(true)}
-      />
+      <Footer setActiveTab={setActiveTab} />
     </div>
   );
 }

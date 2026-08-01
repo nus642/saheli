@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import { INITIAL_PRODUCTS } from '../data/initialData';
 import { Product } from '../types';
-import { Sparkles, Star, Tag, CheckCircle2, Clock, Calculator, Eye, ShieldCheck, ArrowRight, X } from 'lucide-react';
+import { Eye, X } from 'lucide-react';
 
-interface ProductCatalogProps {
-  openShadeCalc: () => void;
-  openUsageGuide: () => void;
-}
 
-export const ProductCatalog: React.FC<ProductCatalogProps> = ({
-  openShadeCalc,
-  openUsageGuide,
-}) => {
+export const ProductCatalog: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
@@ -71,12 +64,6 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               key={prod.id}
               className="bg-white border border-[#E5E2D9] overflow-hidden shadow-xs hover:border-[#5B6346] transition-all flex flex-col group relative"
             >
-              {/* Best seller badge */}
-              {prod.isBestSeller && (
-                <div className="absolute top-3 left-3 z-10 bg-[#5B6346] text-white text-[10px] font-bold px-2.5 py-1 uppercase tracking-widest">
-                  核心爆款
-                </div>
-              )}
 
               {/* Product Image Container */}
               <div className="relative h-64 bg-[#E8E2D6] overflow-hidden">
@@ -110,13 +97,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               {/* Product Info */}
               <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs text-gray-500">
+                  <div className="text-xs text-gray-500">
                     <span className="font-mono">{prod.weight}</span>
-                    <div className="flex items-center gap-1 text-[#5B6346] font-bold">
-                      <Star className="w-3.5 h-3.5 fill-current" />
-                      <span>{prod.rating}</span>
-                      <span className="text-gray-400 font-normal">({prod.reviewCount}评价)</span>
-                    </div>
                   </div>
 
                   <h3 className="font-serif text-xl text-[#2C2C2C] group-hover:text-[#5B6346] transition-colors">
@@ -236,20 +218,6 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 <p className="text-[#5B6346] break-all">{activeProduct.imagePath}</p>
               </div>
 
-              {/* Actions */}
-              <div className="flex flex-wrap gap-3 pt-2">
-                <button
-                  onClick={() => {
-                    setActiveProduct(null);
-                    openShadeCalc();
-                  }}
-                  className="flex-1 py-3 px-4 bg-[#5B6346] text-white text-xs font-bold uppercase tracking-widest hover:bg-[#4A5039] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-                >
-                  <Calculator className="w-4 h-4 text-[#FAF9F6]" />
-                  <span>计算用量与发色算盘</span>
-                </button>
-
-              </div>
 
             </div>
           </div>

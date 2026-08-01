@@ -1,4 +1,4 @@
-import { Product, HerbIngredient, Review, BrandMilestone, Certification, ContentPathConfig } from '../types';
+import { Product, HerbIngredient, BrandMilestone, Certification, ContentPathConfig } from '../types';
 
 export const INITIAL_PRODUCTS: Product[] = [
   {
@@ -10,9 +10,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 88,
     originalPrice: 118,
     weight: '250g / 包',
-    rating: 4.9,
-    reviewCount: 382,
-    tags: ['热销爆款', '白发转铜红/棕色底', '100%有机', '三道超细研磨'],
+    tags: ['白发转铜红/棕色底', '100%有机', '三道超细研磨'],
     imagePath: '/assets/products/saheli-henna-pure.jpg',
     shadeColorHex: '#B84A28',
     description: '选用印度拉贾斯坦邦索杰特（Sojat）核心产区头采指甲花叶，经历三道低温研磨与精细筛滤，散色素（Lawsones）含量高达 2.8%+。滋养头发鳞片，赋予白发自然栗红铜色，强化发丝粗度与韧性。',
@@ -20,7 +18,6 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: ['100% 有机拉贾斯坦指甲花叶 (Lawsonia Inermis Powder)'],
     steepTimeHours: 2,
     leaveInHours: '2 - 3 小时',
-    isBestSeller: true
   },
   {
     id: 'prod-indigo-02',
@@ -31,17 +28,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 98,
     originalPrice: 128,
     weight: '250g / 包',
-    rating: 4.9,
-    reviewCount: 295,
     tags: ['天然调深色', '一步/两步法配方', '防脱乌发', '无化学PPD'],
     imagePath: '/assets/products/saheli-indigo-pure.jpg',
     shadeColorHex: '#22384D',
-    description: '新鲜头采木蓝嫩叶发酵后超微研磨而成。与海娜粉配合使用（一步法混合或两步法先红后黑），可将白发自然转变为自然深棕、黑棕或浓郁乌黑，完全替代化学对苯二胺（PPD）染发剂。',
+    description: '新鲜头采木蓝嫩叶发酵后超微研磨而成。与海娜粉配合使用（一步法混合或两步法先红后黑），可将白发自然转变为自然深棕、黑棕或浓郁乌黑。',
     suitableFor: ['追求自然黑/深棕色', '抗拒化学黑发剂', '头皮敏感人群'],
     ingredients: ['100% 有机木蓝叶粉 (Indigofera Tinctoria Leaf Powder)'],
     steepTimeHours: 0.2, // 15 mins
     leaveInHours: '1.5 - 2 小时',
-    isBestSeller: true
   },
   {
     id: 'prod-set-darkbrown',
@@ -52,17 +46,14 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 168,
     originalPrice: 226,
     weight: '500g 组合装',
-    rating: 5.0,
-    reviewCount: 640,
-    tags: ['盖白发首选', '自然深棕色', '买即赠全套工具', '新手无忧'],
+    tags: ['自然深棕色', '买即赠全套工具', '新手无忧'],
     imagePath: '/assets/products/saheli-kit-darkbrown.jpg',
     shadeColorHex: '#3D2B1F',
     description: '专为亚洲人白发群体设计的经典比例套组。结合海娜的强效包覆与靛蓝的自然调深，一步法调配出自然暖棕，两步法实现自然深棕/自然黑。赠送专业染发碗、搅拌勺、浴帽、耳罩及量匙。',
-    suitableFor: ['白发比例 30% - 100%', '敏感肌/孕妈妈备用发彩', '长期染发者'],
+    suitableFor: ['白发比例 30% - 100%', '长期染发者'],
     ingredients: ['有机海娜粉 250g', '有机靛蓝粉 250g', '无患子洗发果粉 20g (赠品)'],
     steepTimeHours: 1.5,
     leaveInHours: '2 - 2.5 小时',
-    isBestSeller: true
   },
   {
     id: 'prod-cassia-03',
@@ -73,8 +64,6 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 82,
     originalPrice: 108,
     weight: '200g / 包',
-    rating: 4.8,
-    reviewCount: 120,
     tags: ['不改变深发色', '发丝高光质感', '蓬松丰盈', '头皮SPA'],
     imagePath: '/assets/products/saheli-cassia-shine.jpg',
     shadeColorHex: '#D1AC00',
@@ -83,7 +72,6 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: ['100% 有机钝叶决明叶粉 (Cassia Obovata Leaf Powder)'],
     steepTimeHours: 0.5,
     leaveInHours: '1 小时',
-    isBestSeller: false
   },
   {
     id: 'prod-amla-04',
@@ -94,8 +82,6 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 78,
     originalPrice: 98,
     weight: '200g / 包',
-    rating: 4.9,
-    reviewCount: 178,
     tags: ['高超抗氧化维C', '固色加深', '收敛毛鳞片', '毛囊滋养'],
     imagePath: '/assets/products/saheli-amla-vitamin.jpg',
     shadeColorHex: '#708238',
@@ -104,7 +90,6 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: ['100% 有机余甘子果实粉 (Amla Powder)'],
     steepTimeHours: 0.5,
     leaveInHours: '45 - 60 分钟',
-    isBestSeller: false
   },
   {
     id: 'prod-shikakai-05',
@@ -115,8 +100,6 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 75,
     originalPrice: 95,
     weight: '200g / 包',
-    rating: 4.8,
-    reviewCount: 156,
     tags: ['无硅油无泡沫剂', '自然植物皂苷', '温和头皮去屑', '染后洗护'],
     imagePath: '/assets/products/saheli-ayurvedic-wash.jpg',
     shadeColorHex: '#5C4033',
@@ -125,7 +108,6 @@ export const INITIAL_PRODUCTS: Product[] = [
     ingredients: ['刺槐豆粉 (Shikakai)', '无患子粉 (Reetha)', '余甘子粉 (Amla)'],
     steepTimeHours: 0.1,
     leaveInHours: '5 - 10 分钟',
-    isBestSeller: false
   }
 ];
 
@@ -210,61 +192,6 @@ export const HERB_INGREDIENTS: HerbIngredient[] = [
   }
 ];
 
-export const INITIAL_REVIEWS: Review[] = [
-  {
-    id: 'rev-1',
-    userName: '张阿姨 (58岁)',
-    userTag: '白发比例60% | 染自然深棕色套组',
-    rating: 5,
-    date: '2026-07-15',
-    productUsed: 'Saheli 智能植物盖白发套组【自然深棕】',
-    content: '用了近20年的化学染发剂，后脑勺和头皮总是发红发痒，白发一长出来就很明显。后来朋友推荐了印度莎荷丽的植物粉。按照说明先用红海娜打底，再用靛蓝粉，染完白发全部变成了非常自然的深棕色！最神奇的是头皮一点都不刺痛，洗完头发还有淡淡的青草香气，发质明显硬朗有光泽了，太满意了！',
-    verifiedPurchase: true,
-    tags: ['盖白发完美', '头皮无刺痛', '光泽感极佳', '草本清香'],
-    helpfulCount: 84,
-    beforeImg: 'https://images.unsplash.com/photo-1584297091622-af8e5cb1f34d?w=600&auto=format&fit=crop&q=80',
-    afterImg: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'rev-2',
-    userName: '林女士 (34岁)',
-    userTag: '产后敏感发质 | 纯红海娜+阿姆拉粉',
-    rating: 5,
-    date: '2026-07-20',
-    productUsed: 'Saheli 经典特级红海娜粉',
-    content: '生完宝宝后头发掉得多，头皮特别敏感，不敢用任何化学药剂。莎荷丽的海娜粉粉质真的太细腻了！搅拌开来就像抹茶泥一样，完全没有粗颗粒颗粒感。染出来的颜色在阳光下是超好看的暖栗铜色，发尾分叉少了很多，头发摸起来顺滑极了！',
-    verifiedPurchase: true,
-    tags: ['粉质极细', '产后放心用', '修护分叉', '好冲洗'],
-    helpfulCount: 62,
-    beforeImg: 'https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=600&auto=format&fit=crop&q=80',
-    afterImg: 'https://images.unsplash.com/photo-1605980776566-049516ac949a?w=600&auto=format&fit=crop&q=80'
-  },
-  {
-    id: 'rev-3',
-    userName: '陈先生 (45岁)',
-    userTag: '两鬓斑白 | 一步法自然黑',
-    rating: 5,
-    date: '2026-06-28',
-    productUsed: 'Saheli 纯净木蓝/靛蓝粉 + 海娜组合',
-    content: '以前在理发店染黑发，每次弄完眼睛都有点熏得难受。换成莎荷丽后，自己在家拿热牛奶加水调开，涂在两鬓白发上。效果出乎意料的好，不是那种死板的假黑，而是很有质感的自然乌黑！卖家客服给的白发配比计算器非常准确。',
-    verifiedPurchase: true,
-    tags: ['不熏眼', '自然黑不假面', '男士白发推荐'],
-    helpfulCount: 45
-  },
-  {
-    id: 'rev-4',
-    userName: 'Sofia (29岁)',
-    userTag: '细软塌发质 | 无色海娜/决明子亮发粉',
-    rating: 5,
-    date: '2026-07-02',
-    productUsed: 'Saheli 无色海娜/决明子亮发粉',
-    content: '不想染色但发质细软塌很苦恼。买了决明子粉做周度护理，做完一次头发立竿见影地蓬松起来！感觉每一根头发都变厚实了，光泽度就像做了昂贵的Salon高光护理一样。强烈推荐给不想改变发色但想改善发质的小伙伴。',
-    verifiedPurchase: true,
-    tags: ['蓬松度提升', '高光光泽', '深层养发'],
-    helpfulCount: 38
-  }
-];
-
 export const BRAND_MILESTONES: BrandMilestone[] = [
   {
     year: '1998',
@@ -306,8 +233,8 @@ export const CERTIFICATIONS: Certification[] = [
   {
     name: '0% Chemical PPD',
     agency: '国际第三方化验所',
-    badgeText: '0对苯二胺/0氨水/0重金属',
-    description: '权威机构SGS检测，完全不含苯二胺、过氧化氢、铅汞重金属。',
+    badgeText: 'SGS 检测',
+    description: '产品检测信息由国际第三方化验所提供。',
     iconName: 'Sparkles'
   },
   {
@@ -323,7 +250,6 @@ export const DEFAULT_PATH_CONFIG: ContentPathConfig = {
   productImagePathBase: '/assets/images/products/',
   ingredientImagePathBase: '/assets/images/ingredients/',
   brandStoryImagePathBase: '/assets/images/brand/',
-  reviewImagePathBase: '/assets/images/reviews/',
   customProducts: INITIAL_PRODUCTS,
   lastUpdated: new Date().toISOString().split('T')[0]
 };

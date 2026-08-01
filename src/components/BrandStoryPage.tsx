@@ -2,13 +2,7 @@ import React from 'react';
 import { BRAND_MILESTONES, CERTIFICATIONS } from '../data/initialData';
 import { Leaf, Award, ShieldCheck, Heart, Sparkles, MapPin, CheckCircle, Users, Sun, Droplets } from 'lucide-react';
 
-interface BrandStoryPageProps {
-  openUsageGuide: () => void;
-}
-
-export const BrandStoryPage: React.FC<BrandStoryPageProps> = ({
-  openUsageGuide,
-}) => {
+export const BrandStoryPage: React.FC = () => {
   return (
     <div className="bg-[#FAF9F6] min-h-screen py-10 lg:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
@@ -198,11 +192,6 @@ export const BrandStoryPage: React.FC<BrandStoryPageProps> = ({
           <div className="pt-4 text-center border-t border-white/20 flex flex-wrap justify-center items-center gap-6 text-xs text-[#E5E2D9]">
             <span>检测报告编号：SGS-CN2026-HERB-0988</span>
             <span>•</span>
-            <span>0 对苯二胺 (PPD)</span>
-            <span>•</span>
-            <span>0 过氧化氢 (H2O2)</span>
-            <span>•</span>
-            <span>0 铅汞重金属</span>
           </div>
         </div>
 
