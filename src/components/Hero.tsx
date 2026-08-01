@@ -60,7 +60,7 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
-                  <span>3000目极细微粉</span>
+                  <span>海娜与草本护理</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
