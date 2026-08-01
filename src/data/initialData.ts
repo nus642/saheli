@@ -28,7 +28,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     price: 98,
     originalPrice: 128,
     weight: '250g / 包',
-    tags: ['天然调深色', '一步/两步法配方', '防脱乌发', '无化学PPD'],
+    tags: ['天然调深色', '一步/两步法配方', '防脱乌发'],
     imagePath: '/assets/products/saheli-indigo-pure.jpg',
     shadeColorHex: '#22384D',
     description: '新鲜头采木蓝嫩叶发酵后超微研磨而成。与海娜粉配合使用（一步法混合或两步法先红后黑），可将白发自然转变为自然深棕、黑棕或浓郁乌黑。',
@@ -229,13 +229,6 @@ export const CERTIFICATIONS: Certification[] = [
     badgeText: 'ECOCERT COSMOS',
     description: '通过严苛的欧洲天然化妆品标准，确保可持久再生与环境友好。',
     iconName: 'Leaf'
-  },
-  {
-    name: '0% Chemical PPD',
-    agency: '国际第三方化验所',
-    badgeText: 'SGS 检测',
-    description: '产品检测信息由国际第三方化验所提供。',
-    iconName: 'Sparkles'
   },
   {
     name: 'Cruelty-Free & Vegan',

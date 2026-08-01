@@ -22,7 +22,7 @@ export const IngredientAnalysisPage: React.FC = () => {
           </h1>
 
           <p className="text-base text-gray-600 leading-relaxed font-sans">
-            拒绝隐瞒任何化学添加剂。Saheli 的每一包染发粉，均由 100% 单一或复方印度阿育吠陀经典植物微粉组成。不含防腐剂、不含重金属、不含对苯二胺 (PPD)。
+            Saheli 的染发粉分为单一植物微粉与复方植物微粉产品。
           </p>
         </div>
 
