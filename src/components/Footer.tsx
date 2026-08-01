@@ -1,15 +1,14 @@
 import React from 'react';
-import { Leaf, ShieldCheck, Heart, Sparkles, Award, MapPin, Phone, Mail, FileText } from 'lucide-react';
+import { ExternalLink, Leaf, ShieldCheck, Heart, Sparkles, Award } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 interface FooterProps {
   setActiveTab: (tab: string) => void;
-  openContentPathManager: () => void;
   openUsageGuide: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   setActiveTab,
-  openContentPathManager,
   openUsageGuide,
 }) => {
   return (
@@ -48,17 +47,13 @@ export const Footer: React.FC<FooterProps> = ({
                 <Leaf className="w-5 h-5 fill-current" />
               </div>
               <div>
-                <span className="font-serif text-2xl font-light tracking-widest text-white uppercase">Saheli</span>
-                <span className="font-serif text-xl text-[#5B6346] ml-2">莎荷丽</span>
+                <span className="font-serif text-2xl font-light tracking-widest text-white uppercase">{siteConfig.siteName.en}</span>
+                <span className="font-serif text-xl text-[#5B6346] ml-2">{siteConfig.siteName.zh}</span>
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
-              莎荷丽 (Saheli) 专注引进印度拉贾斯坦邦圣地索杰特 (Sojat) 纯天然草本植物染发粉。以高散色素活性的红海娜（Henna）与木蓝（Indigo）为核心，传承古法草本养发智慧，让每一次盖白发都成为头皮SPA。
+              {siteConfig.positioning}
             </p>
-            <div className="flex items-center gap-2 text-xs text-[#E8E2D6] bg-white/5 px-3 py-2 border border-white/10 w-fit">
-              <MapPin className="w-4 h-4 shrink-0 text-[#5B6346]" />
-              <span>原料产地：Rajasthan, Sojat, India (印度索杰特天然农场)</span>
-            </div>
           </div>
 
           {/* Dedicated Pages Links */}
@@ -95,32 +90,34 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Product Image & Text Path System */}
+          {/* Partner Brands & Store */}
           <div className="md:col-span-4 space-y-3">
             <h4 className="font-serif font-bold text-white text-base border-b border-white/10 pb-2 uppercase tracking-wider">
-              图文输入路径与数据接口
+              合作品牌
             </h4>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              本系统预留了完整的图文输入标准接口（JSON Schema / Asset Folder Paths），方便商家配置本地或服务器上的产品图文、成分图鉴与品牌素材。
-            </p>
-            <div className="bg-white/5 p-3 border border-white/10 text-xs font-mono text-[#E8E2D6] space-y-1">
-              <div>📁 /assets/images/products/</div>
-              <div>📁 /assets/images/ingredients/</div>
-              <div>📁 /assets/images/brand/</div>
+            <div className="bg-white/5 p-4 border border-white/10 text-sm text-[#E8E2D6] space-y-3">
+              {siteConfig.brands.partners.map((brand) => (
+                <div key={brand.en} className="flex items-center justify-between gap-4">
+                  <span className="font-serif text-white">{brand.en}</span>
+                  <span className="text-gray-400">{brand.zh}</span>
+                </div>
+              ))}
             </div>
-            <button
-              onClick={openContentPathManager}
-              className="w-full py-2.5 px-3 bg-[#5B6346] hover:bg-[#4A5039] text-white text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+            <a
+              href={siteConfig.taobaoStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-2.5 px-3 bg-[#5B6346] hover:bg-[#4A5039] text-white text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-1.5 transition-colors"
             >
-              <FileText className="w-4 h-4" />
-              <span>管理产品图文输入路径 & 编辑数据</span>
-            </button>
+              <ExternalLink className="w-4 h-4" />
+              <span>前往淘宝店铺</span>
+            </a>
           </div>
         </div>
 
         {/* Bottom copyright */}
         <div className="pt-8 border-t border-white/10 text-center text-xs text-gray-500 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Saheli 莎荷丽 印度有机植物染发中国代理团队. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} {siteConfig.siteName.en} {siteConfig.siteName.zh}. All Rights Reserved.</p>
           <div className="flex items-center gap-4 text-xs text-gray-400">
             <span>100% 纯植物无添加</span>
             <span>•</span>

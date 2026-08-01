@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Leaf, Menu, X, SlidersHorizontal, Calculator, BookOpen, ShieldCheck, Sparkles, FolderKanban } from 'lucide-react';
+import { Leaf, Menu, X, SlidersHorizontal, Calculator, BookOpen, ShieldCheck, Sparkles } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 interface HeaderProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
   openShadeCalc: () => void;
-  openContentPathManager: () => void;
   openUsageGuide: () => void;
 }
 
@@ -13,7 +13,6 @@ export const Header: React.FC<HeaderProps> = ({
   activeTab,
   setActiveTab,
   openShadeCalc,
-  openContentPathManager,
   openUsageGuide,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -61,10 +60,10 @@ export const Header: React.FC<HeaderProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-brand text-2xl font-bold tracking-widest text-[#5B6346]">
-                  SAHELI
+                  {siteConfig.siteName.en.toUpperCase()}
                 </span>
                 <span className="font-serif-sc text-xl font-bold text-[#2C2C2C]">
-                  莎荷丽
+                  {siteConfig.siteName.zh}
                 </span>
               </div>
               <p className="text-[10px] uppercase tracking-[0.2em] text-[#A5A093] font-sans">
@@ -105,15 +104,6 @@ export const Header: React.FC<HeaderProps> = ({
               <span>配方与算盘</span>
             </button>
 
-            {/* 图文路径与配置中心 Manager */}
-            <button
-              onClick={openContentPathManager}
-              title="查看与修改产品图文输入路径/媒体资产配置"
-              className="px-4 py-2.5 rounded-sm bg-[#5B6346] text-white hover:bg-[#4A5039] text-xs uppercase tracking-wider font-medium flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
-            >
-              <FolderKanban className="w-4 h-4 text-[#E5E2D9]" />
-              <span>图文输入配置</span>
-            </button>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -162,7 +152,7 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </div>
 
-          <div className="pt-3 border-t border-[#E5E2D9] grid grid-cols-2 gap-2">
+          <div className="pt-3 border-t border-[#E5E2D9]">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
@@ -172,17 +162,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Calculator className="w-4 h-4" />
               <span>染发配方算盘</span>
-            </button>
-
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                openContentPathManager();
-              }}
-              className="w-full py-2.5 px-3 rounded-sm bg-[#2C2C2C] text-[#FAF9F6] text-xs uppercase tracking-wider font-medium flex items-center justify-center gap-1.5"
-            >
-              <FolderKanban className="w-4 h-4 text-[#A5A093]" />
-              <span>图文输入接口</span>
             </button>
           </div>
         </div>

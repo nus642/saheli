@@ -24,7 +24,6 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         openShadeCalc={() => setIsShadeCalcOpen(true)}
-        openContentPathManager={() => setIsContentPathManagerOpen(true)}
         openUsageGuide={() => setIsUsageGuideOpen(true)}
       />
 
@@ -173,7 +172,6 @@ export default function App() {
       {/* Global Footer */}
       <Footer
         setActiveTab={setActiveTab}
-        openContentPathManager={() => setIsContentPathManagerOpen(true)}
         openUsageGuide={() => setIsUsageGuideOpen(true)}
       />
     </div>
