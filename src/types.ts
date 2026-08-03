@@ -3,18 +3,20 @@ export interface Product {
   name: string;
   subName: string;
   englishName: string;
-  category: 'powder' | 'kit' | 'care' | 'tool';
+  brand: string;
+  category: 'pure-powder' | 'herbal-color';
   price: number;
-  originalPrice?: number;
   weight: string;
   tags: string[];
-  imagePath: string; // Dynamic path or CDN URL
+  imagePath: string;
+  purchaseUrl: string;
   description: string;
-  shadeColorHex: string;
-  suitableFor: string[];
-  ingredients: string[];
-  steepTimeHours: number;
-  leaveInHours: string;
+  ingredientOriginal: string;
+  ingredientsChinese: string;
+  origin?: string;
+  usage: string;
+  notice?: string;
+  certification?: string;
 }
 
 export interface HerbIngredient {
