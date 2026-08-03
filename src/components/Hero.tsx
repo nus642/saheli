@@ -24,12 +24,12 @@ export const Hero: React.FC<HeroProps> = ({
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl leading-[1.15] font-light font-serif text-[#2C2C2C]">
                 来自印度的<br />
-                <span className="italic font-serif text-[#5B6346]">草本奇迹</span>与纯净自然
+                <span className="italic font-serif text-[#5B6346]">海娜</span>与植物染发粉
               </h1>
 
               {/* Subtitle / Value Prop */}
               <p className="max-w-xl text-sm sm:text-base leading-relaxed text-gray-600 font-sans">
-                <strong className="text-[#2C2C2C] font-semibold">Saheli 莎荷丽</strong> 代理印度拉贾斯坦邦索杰特海娜与木蓝植物粉。天然包裹遮盖白发，为发丝带来温润本色。
+                <strong className="text-[#2C2C2C] font-semibold">Saheli 莎荷丽</strong> 代理印度拉贾斯坦邦索杰特海娜与植物配方染发粉。查看当前目录中的两款真实商品与包装使用说明。
               </p>
 
               {/* CTAs */}
@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({
                   className="px-6 py-3.5 border border-[#5B6346] text-[#5B6346] text-xs uppercase tracking-widest hover:bg-[#5B6346] hover:text-white transition-colors cursor-pointer flex items-center gap-2 font-sans"
                 >
                   <Sparkles className="w-4 h-4" />
-                  <span>天然染发套组</span>
+                  <span>查看真实产品目录</span>
                 </button>
 
               </div>
@@ -56,15 +56,15 @@ export const Hero: React.FC<HeroProps> = ({
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
-                  <span>天然物理包裹遮白</span>
+                  <span>海娜与植物配方染发粉</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
-                  <span>海娜与草本护理</span>
+                  <span>植物原料信息透明</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
-                  <span>修护受损毛鳞片</span>
+                  <span>具体配方以商品包装为准</span>
                 </div>
                 <div className="flex items-center gap-2 p-2.5 bg-white border border-[#E5E2D9]">
                   <CheckCircle2 className="w-4 h-4 text-[#5B6346] shrink-0" />
@@ -84,8 +84,8 @@ export const Hero: React.FC<HeroProps> = ({
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-[10px] uppercase tracking-widest font-sans backdrop-blur-xs bg-black/30 p-2.5 border border-white/20">
-                  <span>Organic Henna & Indigo Mix</span>
-                  <span className="text-[#FAF9F6] font-bold">自然深棕盖白发套组</span>
+                  <span>Henna & Botanical Hair Color Powder</span>
+                  <span className="text-[#FAF9F6] font-bold">海娜与植物配方染发粉</span>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@ export const Hero: React.FC<HeroProps> = ({
                   品牌故事 / Heritage
                 </h3>
                 <p className="text-base sm:text-lg leading-relaxed italic font-serif text-[#2C2C2C]">
-                  “Saheli”在印地语中意为“女性友人与知己”。我们希望这份来自拉贾斯坦邦土地的馈赠，能像闺蜜般温柔呵护您的每一根发丝。
+                  “Saheli”在印地语中意为“女性友人与知己”。品牌从印度拉贾斯坦邦索杰特出发，提供海娜与植物配方染发粉。
                 </p>
               </div>
               <button
@@ -120,19 +120,19 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="space-y-3 font-sans">
                 <div className="flex justify-between items-end border-b border-[#D8D4C7] pb-2">
                   <span className="text-sm font-medium text-[#2C2C2C]">指甲花 (Henna)</span>
-                  <span className="text-xs text-[#5B6346] font-semibold">上色 & 强韧</span>
+                  <span className="text-xs text-[#5B6346] font-semibold">提供暖红铜色调</span>
                 </div>
                 <div className="flex justify-between items-end border-b border-[#D8D4C7] pb-2">
                   <span className="text-sm font-medium text-[#2C2C2C]">木蓝 (Indigo)</span>
-                  <span className="text-xs text-[#5B6346] font-semibold">调色 & 光泽</span>
+                  <span className="text-xs text-[#5B6346] font-semibold">用于调配深色调</span>
                 </div>
                 <div className="flex justify-between items-end border-b border-[#D8D4C7] pb-2">
                   <span className="text-sm font-medium text-[#2C2C2C]">余甘子 (Amla)</span>
-                  <span className="text-xs text-[#5B6346] font-semibold">固色 & 养发</span>
+                  <span className="text-xs text-[#5B6346] font-semibold">用于调整暖色调</span>
                 </div>
                 <div className="flex justify-between items-end border-b border-[#D8D4C7] pb-2">
                   <span className="text-sm font-medium text-[#2C2C2C]">无患子 (Reetha)</span>
-                  <span className="text-xs text-[#5B6346] font-semibold">清洁 & 蓬松</span>
+                  <span className="text-xs text-[#5B6346] font-semibold">植物配方原料</span>
                 </div>
               </div>
             </div>
