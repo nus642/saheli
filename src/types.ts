@@ -1,23 +1,46 @@
-export interface Product {
+export interface ProductDetails {
+  price: number;
+  imagePaths: string[];
+  purchaseUrl: string;
+  description: string;
+  ingredientOriginal: string;
+  ingredientsChinese: string;
+  usage: string;
+  notice?: string;
+  certification?: string;
+  origin?: string;
+}
+
+export interface ProductVariant extends ProductDetails {
+  id: string;
+  colorName: string;
+  colorEnglishName: string;
+  packagingEnglishName: string;
+  tags?: string[];
+}
+
+interface ProductBase {
   id: string;
   name: string;
   subName: string;
   englishName: string;
   brand: string;
   category: 'pure-powder' | 'herbal-color';
-  price: number;
   weight: string;
   tags: string[];
-  imagePath: string;
-  purchaseUrl: string;
-  description: string;
-  ingredientOriginal: string;
-  ingredientsChinese: string;
-  origin?: string;
-  usage: string;
-  notice?: string;
-  certification?: string;
 }
+
+export interface StandaloneProduct extends ProductBase, ProductDetails {
+  kind: 'standalone';
+}
+
+export interface VariantProduct extends ProductBase {
+  kind: 'variant';
+  defaultVariantId: string;
+  variants: ProductVariant[];
+}
+
+export type Product = StandaloneProduct | VariantProduct;
 
 export interface HerbIngredient {
   id: string;
