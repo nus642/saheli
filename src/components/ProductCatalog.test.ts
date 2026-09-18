@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { INITIAL_PRODUCTS } from '../data/initialData';
-import { getDefaultVariant, getProductDetails } from './ProductCatalog';
+import { getDefaultVariant, getProductDetails, getProductImageAlt } from './ProductCatalog';
 
 const hairColor = INITIAL_PRODUCTS.find((product) => product.id === 'saheli-herbal-hair-color-100g');
 
@@ -10,6 +10,19 @@ if (!hairColor || hairColor.kind !== 'variant') throw new Error('Variant product
 test('product detail selection defaults to soft black', () => {
   assert.equal(getDefaultVariant(hairColor)?.id, 'soft-black');
   assert.equal(getProductDetails(hairColor).imagePaths[0], '/assets/products/saheli-soft-black-100g.jpg');
+});
+
+test('an invalid default variant deterministically falls back to the first variant', () => {
+  const invalidDefaultProduct = { ...hairColor, defaultVariantId: 'not-a-variant' };
+  assert.equal(getDefaultVariant(invalidDefaultProduct)?.id, 'soft-black');
+  assert.equal(getProductDetails(invalidDefaultProduct).imagePaths[0], '/assets/products/saheli-soft-black-100g.jpg');
+});
+
+test('image alt text follows the selected color and image side', () => {
+  const softBlack = hairColor.variants.find(({ id }) => id === 'soft-black');
+  const darkBrown = hairColor.variants.find(({ id }) => id === 'dark-brown');
+  assert.equal(getProductImageAlt(hairColor, softBlack, 0), 'Saheli 莎荷丽植物染发粉 100g｜自然黑正面包装');
+  assert.equal(getProductImageAlt(hairColor, darkBrown, 1), 'Saheli 莎荷丽植物染发粉 100g｜深棕背面包装');
 });
 
 test('detail selection switches all independent fields to dark brown and back', () => {

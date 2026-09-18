@@ -19,6 +19,18 @@ test('hair color offers only soft black and dark brown and defaults to soft blac
   assert.equal(hairColor.variants.some((variant) => /natural brown|自然棕/i.test(`${variant.colorName} ${variant.colorEnglishName}`)), false);
 });
 
+test('soft black preserves its original subtype and all variant tags', () => {
+  assert.equal(hairColor?.kind, 'variant');
+  if (hairColor?.kind !== 'variant') return;
+  assert.equal(hairColor.subName, '植物配方色粉');
+  assert.deepEqual(hairColor.variants.find(({ id }) => id === 'soft-black')?.tags, [
+    '自然黑',
+    '两个相同配方内袋',
+    '可分次使用',
+  ]);
+  assert.equal(hairColor.variants.find(({ id }) => id === 'dark-brown')?.tags, undefined);
+});
+
 test('dark brown has independent price, images, ingredients, purchase link, and no certification', () => {
   assert.equal(hairColor?.kind, 'variant');
   if (hairColor?.kind !== 'variant') return;

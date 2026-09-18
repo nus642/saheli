@@ -25,12 +25,12 @@ export const INITIAL_PRODUCTS: Product[] = [
     kind: 'variant',
     id: 'saheli-herbal-hair-color-100g',
     name: 'Saheli 莎荷丽植物染发粉 100g',
-    subName: '植物配方染发粉',
+    subName: '植物配方色粉',
     englishName: 'Saheli Herbal Hair Color 100g',
     brand: 'Saheli 莎荷丽',
     category: 'herbal-color',
     weight: '100g（50g × 2）',
-    tags: ['自然黑 Soft Black', '深棕 Dark Brown'],
+    tags: [],
     defaultVariantId: 'soft-black',
     variants: [
       {
@@ -38,6 +38,7 @@ export const INITIAL_PRODUCTS: Product[] = [
         colorName: '自然黑',
         colorEnglishName: 'Soft Black',
         packagingEnglishName: 'Herbal Hair Color - Soft Black',
+        tags: ['自然黑', '两个相同配方内袋', '可分次使用'],
         price: 130,
         imagePaths: ['/assets/products/saheli-soft-black-100g.jpg'],
         purchaseUrl: 'https://1kbqzgp9java7z653535rattamnhltb.taobao.com/search.htm?search=y&keyword=Herbal%20Hair%20Color%20Soft%20Black',

@@ -16,6 +16,7 @@ export interface ProductVariant extends ProductDetails {
   colorName: string;
   colorEnglishName: string;
   packagingEnglishName: string;
+  tags?: string[];
 }
 
 interface ProductBase {
