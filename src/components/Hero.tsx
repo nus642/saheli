@@ -77,10 +77,9 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="mt-4">
               <div className="relative aspect-[16/7] bg-[#E8E2D6] border border-[#E5E2D9] rounded-sm overflow-hidden flex items-center justify-center group">
                 <img
-                  src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?w=1000&auto=format&fit=crop&q=80"
-                  alt="Organic Henna & Indigo Mix"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
-                  referrerPolicy="no-referrer"
+                  src="/assets/products/saheli-organic-henna-227g.jpg"
+                  alt="Saheli 莎荷丽有机海娜粉 227g 产品包装"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 opacity-90"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white text-[10px] uppercase tracking-widest font-sans backdrop-blur-xs bg-black/30 p-2.5 border border-white/20">
