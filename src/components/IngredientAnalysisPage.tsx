@@ -67,18 +67,19 @@ export const IngredientAnalysisPage: React.FC = () => {
           {/* Detailed Selected Herb Card */}
           <div className="bg-white p-6 sm:p-10 border border-[#E5E2D9] shadow-xs grid grid-cols-1 lg:grid-cols-12 gap-8 items-center animate-in fade-in duration-300">
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative overflow-hidden h-64 sm:h-80 border border-[#E5E2D9] bg-[#E8E2D6]">
-                <img
-                  src={selectedHerb.imagePath.startsWith('/assets') ? 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=80' : selectedHerb.imagePath}
-                  alt={selectedHerb.chineseName}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <div className="text-xs text-[#E8E2D6] font-semibold">{selectedHerb.hindiName}</div>
-                  <h3 className="font-serif text-2xl font-normal">{selectedHerb.chineseName}</h3>
-                  <p className="text-xs text-gray-200 font-mono mt-0.5">{selectedHerb.latinName}</p>
+              <div className="relative overflow-hidden min-h-64 sm:min-h-80 border border-[#D8D4C7] bg-[#E8E2D6] flex items-center justify-center p-8">
+                <div className="absolute -top-16 -right-12 w-52 h-52 rounded-full border border-[#5B6346]/15" />
+                <div className="absolute -bottom-20 -left-10 w-60 h-60 rounded-full border border-[#5B6346]/15" />
+                <div className="relative text-center space-y-4">
+                  <div className="mx-auto w-16 h-16 rounded-full border border-[#5B6346]/40 flex items-center justify-center text-2xl font-serif italic text-[#5B6346]">
+                    {selectedHerb.latinName.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="text-xs text-[#6F6A60] font-semibold">{selectedHerb.hindiName}</div>
+                    <h3 className="font-serif text-2xl text-[#2C2C2C] font-normal mt-1">{selectedHerb.chineseName}</h3>
+                    <p className="text-xs text-[#5B6346] font-mono mt-1 italic">{selectedHerb.latinName}</p>
+                  </div>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#817B70]">Botanical reference</p>
                 </div>
               </div>
 
