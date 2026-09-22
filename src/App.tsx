@@ -81,14 +81,16 @@ export default function App() {
                 </div>
 
                 <div className="lg:col-span-5">
-                  <div className="rounded-sm overflow-hidden border border-[#E5E2D9] h-60 bg-[#E8E2D6]">
+                  <figure className="rounded-sm overflow-hidden border border-[#E5E2D9] bg-[#E8E2D6]">
                     <img
-                      src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&auto=format&fit=crop&q=80"
-                      alt="Saheli Brand Story"
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
+                      src="/assets/brand/rajasthan-botanical-region-concept.webp"
+                      alt="Rajasthan 草本产区意象"
+                      className="w-full h-52 sm:h-60 object-cover"
                     />
-                  </div>
+                    <figcaption className="px-3 py-2 text-[10px] tracking-wider text-[#6F6A60] bg-[#F2F0E9] font-sans">
+                      产地意象图 · AI 辅助生成，非 Saheli 农场实拍
+                    </figcaption>
+                  </figure>
                 </div>
               </div>
             </section>
