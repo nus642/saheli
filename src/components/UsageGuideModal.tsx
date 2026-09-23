@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, X, CheckCircle2, Clock, Droplets, Sparkles, ShieldCheck } from 'lucide-react';
+import { BookOpen, X } from 'lucide-react';
 
 interface UsageGuideModalProps {
   isOpen: boolean;
@@ -12,38 +12,38 @@ export const UsageGuideModal: React.FC<UsageGuideModalProps> = ({ isOpen, onClos
   const steps = [
     {
       num: '01',
-      title: '皮试与工具准备',
-      desc: '初次使用建议取极微量海娜泥涂于耳后留存24小时做敏感测试。准备好染发碗、搅拌勺、浴帽、披肩与双手戴上手套。',
+      title: '确认粉类并进行测试',
+      desc: '先确认使用的是纯海娜，还是含靛蓝的自然黑／深棕色粉。使用前进行皮肤测试和发束测试，并准备手套、染发碗与塑料帽。',
       icon: '🛡️',
     },
     {
       num: '02',
-      title: '温水调配泥膏 (60°C)',
-      desc: '将植物粉倒入碗中，按1:3的比例加入 60°C 左右的温水（也可使用浓红茶水或黑咖啡水），顺时针搅拌至如同酸奶/抹茶泥般细腻。',
+      title: '纯海娜底染调制',
+      desc: 'Saheli 纯海娜按包装加水调成糊状，静置约 2 小时。不要自行加入茶、咖啡、柠檬汁、酸奶或其他家庭材料。',
       icon: '🥣',
     },
     {
       num: '03',
-      title: '海娜醒泥 1-2 小时',
-      desc: '盖上保鲜膜静置醒泥 1~2 小时，让指甲花中的散色素（Lawsone）完全游离释放（若含有靛蓝粉，靛蓝部分需临涂抹前15分钟再混合）。',
+      title: '完成第一段底染',
+      desc: '把海娜泥均匀覆盖白发，戴塑料帽保持湿润。具体上头停留时间以所使用纯海娜产品的包装说明为准。',
       icon: '⏳',
     },
     {
       num: '04',
-      title: '分区厚涂发根白发',
-      desc: '洗净发丝并吹至 8 成干。将头发分成小区块，用梳子或手套将海娜泥厚厚包裹在白发多的发根部位（宁多勿少）。',
+      title: '同日调制目标色粉',
+      desc: '清水冲净海娜泥后，以约 40°C 温水调制自然黑或深棕色粉。含靛蓝色粉应调好立即使用，不要静置等待。',
       icon: '🌿',
     },
     {
       num: '05',
-      title: '浴帽/保鲜膜包裹 2-3 小时',
-      desc: '用浴帽将头发完全包裹紧实，防止植物泥干涸。保持头皮温暖，停留 2~3 小时（期间可听音乐、看书或做家务）。',
+      title: '第二段均匀涂抹',
+      desc: '戴手套分层涂抹目标色粉，覆盖塑料帽，不使用加热帽。按包装停留约 60 分钟。',
       icon: '💆‍♀️',
     },
     {
       num: '06',
-      title: '温水冲净与 72h 自然沉淀',
-      desc: '用温水直接将植物泥冲洗干净，前48-72小时尽量不要使用强碱洗发水。植物色素会在空气中自然氧化，发色在第3天会更加沉稳光亮！',
+      title: '清水冲净并等待显色',
+      desc: '用清水冲净，不使用洗发水，也不使用吹风机。预留约 24 小时让颜色逐渐加深；刚冲洗后的颜色不是最终效果。',
       icon: '✨',
     },
   ];
@@ -65,10 +65,10 @@ export const UsageGuideModal: React.FC<UsageGuideModalProps> = ({ isOpen, onClos
           </div>
           <div>
             <h3 className="font-serif font-bold text-xl text-[#2C2C2C]">
-              Saheli 植物染发新手 6 步图解指南
+              白发两段染 6 步指南
             </h3>
             <p className="text-xs text-gray-500">
-              掌握简单顺手的草本染发节奏，在家尊享阿育吠陀养发SPA
+              纯海娜底染，再于同一天使用自然黑或深棕目标色粉
             </p>
           </div>
         </div>
@@ -91,7 +91,7 @@ export const UsageGuideModal: React.FC<UsageGuideModalProps> = ({ isOpen, onClos
         <div className="p-4 bg-[#2C2C2C] text-[#E8E2D6] border border-[#2C2C2C] text-xs space-y-1">
           <span className="font-bold text-[#5B6346] block uppercase tracking-wider">★ 提示与温馨提示：</span>
           <p className="leading-relaxed text-gray-300">
-            植物染发属于温和包裹养护过程，发色会在染后 48 小时内随空气接触而进一步氧化定色（从最初偏浅逐渐转变为沉稳深棕/乌黑）。请给植物一些自然的蜕变时间！
+            具体产品操作以包装说明为准。纯海娜需要预先释放染料；含靛蓝色粉则应即调即用。不要把两种粉按同一种方式长时间静置。
           </p>
         </div>
 

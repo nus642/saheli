@@ -10,6 +10,17 @@
 - [Saheli Pure Origins Amazon India 品牌店](https://www.amazon.in/stores/SaheliPureOrigins/page/7C5776DB-7761-4854-89A4-845442AD8118)
 - 中国淘宝销售渠道：使用 `src/config/siteConfig.ts` 中的 `siteConfig.taobaoStoreUrl`，不在内容文件内复制 URL。
 
+### 植物染发科学知识来源（2026-09-23 核验）
+
+- [Recent Advancements in Natural Plant Colorants Used for Hair Dye Applications](https://pmc.ncbi.nlm.nih.gov/articles/PMC9692289/)：海娜 lawsone 与角蛋白的结合、pH 4.5–6.0 范围及植物染料机理综述。
+- [Insights into structural and proteomic alterations related to pH-induced changes and protein deamidation in hair](https://pubmed.ncbi.nlm.nih.gov/39529213/)：pH 5–7 对毛发结构影响较小，pH 3 与 pH 8 以上影响更明显。
+- [The Shampoo pH can Affect the Hair: Myth or Reality?](https://pubmed.ncbi.nlm.nih.gov/25210332/)：碱性环境、毛发表面电荷、摩擦和毛鳞片损伤风险。
+- [Estimation of Lawsone Release from Lawsonia inermis Leaf Powder and Dye Uptake on the Hair](https://www.jddtonline.info/index.php/jddt/article/view/1479)：特定实验条件下海娜静置时间与 lawsone 释放量；只用于支持“需要释放时间”，不据此覆盖 Saheli 包装所示约 2 小时。
+- [WO2014104301A1](https://patents.google.com/patent/WO2014104301A1/en)：靛蓝叶粉中 indican、indoxyl 与 indigo 的转化机理及不高于 40°C 的技术条件。专利只作为机理资料，不直接当作全部消费产品说明。
+- Saheli 纯海娜、自然黑及深棕包装资料：产品用水、静置约 2 小时、约 40°C、60 分钟、清水冲洗、不用洗发水／吹风机及约 24 小时显色等具体操作的最高优先级来源。
+
+科学内容发布规则：具体操作以对应产品包装为准；论文、综述和专利用于解释机理与确定表述边界，不得由单项资料推导普遍功效。
+
 ## Confirmed facts
 
 ### 品牌与企业

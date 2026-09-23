@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Leaf, Menu, X, BookOpen, ShieldCheck, Sparkles } from 'lucide-react';
+import { Leaf, Menu, X, BookOpen, ShieldCheck, Sparkles, FlaskConical } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 interface HeaderProps {
@@ -18,6 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'brand', label: '品牌故事', icon: BookOpen },
     { id: 'ingredients', label: '草本成分解析', icon: ShieldCheck },
     { id: 'products', label: '产品与配方', icon: Sparkles },
+    { id: 'knowledge', label: '植物染发知识', icon: FlaskConical },
   ];
 
   const handleNavClick = (id: string) => {

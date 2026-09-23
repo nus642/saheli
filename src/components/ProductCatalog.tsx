@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, Eye, X } from 'lucide-react';
+import { AlertTriangle, ExternalLink, Eye, X } from 'lucide-react';
 import { INITIAL_PRODUCTS } from '../data/initialData';
 import { Product, ProductDetails, ProductVariant } from '../types';
 
@@ -26,7 +26,11 @@ export function getProductImageAlt(
   return `${product.name}${color}${side}包装`;
 }
 
-export const ProductCatalog: React.FC = () => {
+interface ProductCatalogProps {
+  onOpenKnowledge?: () => void;
+}
+
+export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenKnowledge }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
   const [activeVariantId, setActiveVariantId] = useState<string | undefined>();
@@ -175,6 +179,15 @@ export const ProductCatalog: React.FC = () => {
                   {activeVariant.tags.map((tag) => (
                     <span key={tag} className="bg-[#F2F0E9] text-[#2C2C2C] border border-[#D8D4C7] text-[10px] font-medium px-2 py-0.5">{tag}</span>
                   ))}
+                </div>
+              )}
+              {activeProduct.kind === 'variant' && (
+                <div className="bg-[#F5EDE8] border border-[#C59A87] p-4 text-sm text-[#6A3327] space-y-2" aria-label="白发两段染提醒">
+                  <div className="flex items-start gap-2">
+                    <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" />
+                    <p><strong>白发较多，希望获得{activeVariant?.colorName ?? '自然黑或深棕'}效果：</strong>建议先用纯海娜完成底染，再于同一天使用本色粉。色粉请用约 40°C 温水调制并立即使用，不要长时间静置或使用加热帽。</p>
+                  </div>
+                  {onOpenKnowledge && <button type="button" onClick={() => { setActiveProduct(null); onOpenKnowledge(); }} className="ml-6 underline underline-offset-2 font-semibold cursor-pointer">查看完整两段染与科学说明 →</button>}
                 </div>
               )}
               <div className="space-y-2"><h4 className="font-serif font-bold text-[#2C2C2C] text-sm">产品说明</h4><p className="text-sm text-gray-600 leading-relaxed bg-white p-4 border border-[#E5E2D9]">{activeDetails.description}</p></div>
