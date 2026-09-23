@@ -12,7 +12,7 @@ import {
 
 test('knowledge guide has a stable public path that survives refresh', () => {
   assert.equal(getInitialTab(KNOWLEDGE_PATH), 'knowledge');
-  assert.equal(getInitialTab(`${KNOWLEDGE_PATH}/`), 'knowledge');
+  assert.equal(getInitialTab(KNOWLEDGE_PATH.replace(/\/$/, '')), 'knowledge');
   assert.equal(getPathForTab('knowledge'), KNOWLEDGE_PATH);
 });
 
@@ -32,6 +32,21 @@ test('knowledge guide owns distinct search and sharing metadata', () => {
 test('the public knowledge entry exposes metadata without requiring JavaScript', () => {
   const html = readFileSync(new URL('../../plant-hair-color-guide/index.html', import.meta.url), 'utf8');
   assert.match(html, /<title>植物染发知识与白发两段染指南｜莎荷丽 Saheli<\/title>/);
-  assert.match(html, /rel="canonical" href="https:\/\/hairdye\.cn\/plant-hair-color-guide"/);
+  assert.match(html, /rel="canonical" href="https:\/\/hairdye\.cn\/plant-hair-color-guide\/"/);
   assert.match(html, /property="og:image" content="https:\/\/hairdye\.cn\/assets\/guides\/saheli-two-step-dye-guide\.jpg"/);
+});
+
+test('static discovery files expose both public pages to crawlers', () => {
+  const sitemap = readFileSync(new URL('../../public/sitemap.xml', import.meta.url), 'utf8');
+  const robots = readFileSync(new URL('../../public/robots.txt', import.meta.url), 'utf8');
+  assert.match(sitemap, /<loc>https:\/\/hairdye\.cn\/<\/loc>/);
+  assert.match(sitemap, /<loc>https:\/\/hairdye\.cn\/plant-hair-color-guide\/<\/loc>/);
+  assert.match(robots, /Sitemap: https:\/\/hairdye\.cn\/sitemap\.xml/);
+});
+
+test('home and knowledge entries use page-specific static share images', () => {
+  const home = readFileSync(new URL('../../index.html', import.meta.url), 'utf8');
+  const knowledge = readFileSync(new URL('../../plant-hair-color-guide/index.html', import.meta.url), 'utf8');
+  assert.match(home, /og:image" content="https:\/\/hairdye\.cn\/assets\/brand\/rajasthan-botanical-region-concept\.webp"/);
+  assert.match(knowledge, /og:image" content="https:\/\/hairdye\.cn\/assets\/guides\/saheli-two-step-dye-guide\.jpg"/);
 });

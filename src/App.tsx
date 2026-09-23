@@ -10,7 +10,6 @@ import { ShieldCheck, Sparkles, BookOpen, Factory } from 'lucide-react';
 import { getInitialTab, getPageMetadata, getPathForTab } from './routing';
 
 const SITE_ORIGIN = 'https://hairdye.cn';
-const SHARE_IMAGE_PATH = '/assets/guides/saheli-two-step-dye-guide.jpg';
 
 function setMetaContent(selector: string, attribute: 'name' | 'property', key: string, content: string) {
   let element = document.head.querySelector<HTMLMetaElement>(selector);
@@ -26,6 +25,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<string>(() => getInitialTab(window.location.pathname));
 
   const navigateToTab = (tab: string) => {
+    if (tab === activeTab) return;
     window.history.pushState({ tab }, '', getPathForTab(tab));
     setActiveTab(tab);
   };
@@ -46,7 +46,7 @@ export default function App() {
   useEffect(() => {
     const metadata = getPageMetadata(activeTab);
     const canonicalUrl = `${SITE_ORIGIN}${metadata.path}`;
-    const shareImageUrl = `${SITE_ORIGIN}${SHARE_IMAGE_PATH}`;
+    const shareImageUrl = `${SITE_ORIGIN}${metadata.imagePath}`;
     document.title = metadata.title;
 
     setMetaContent('meta[name="description"]', 'name', 'description', metadata.description);
