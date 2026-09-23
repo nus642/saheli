@@ -26,6 +26,12 @@ export function getProductImageAlt(
   return `${product.name}${color}${side}包装`;
 }
 
+export function getTwoStepDyeReminder(product: Product, variant?: ProductVariant): string | null {
+  if (product.kind !== 'variant') return null;
+  const colorName = variant?.colorName ?? '自然黑或深棕';
+  return `白发较多，希望获得${colorName}效果：建议先用纯海娜完成底染，再于同一天使用本色粉。包装要求以约 40°C 温水调匀后涂抹；结合靛蓝染料机理，本站建议调好后尽快使用，不要长时间静置或额外加热。`;
+}
+
 interface ProductCatalogProps {
   onOpenKnowledge?: () => void;
 }
@@ -53,6 +59,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenKnowledge 
   const activeVariant = activeProduct?.kind === 'variant'
     ? activeProduct.variants.find((variant) => variant.id === activeVariantId) ?? getDefaultVariant(activeProduct)
     : undefined;
+  const twoStepReminder = activeProduct ? getTwoStepDyeReminder(activeProduct, activeVariant) : null;
 
   return (
     <section className="bg-[#FAF9F6] py-12 lg:py-20" id="products">
@@ -181,11 +188,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenKnowledge 
                   ))}
                 </div>
               )}
-              {activeProduct.kind === 'variant' && (
+              {twoStepReminder && (
                 <div className="bg-[#F5EDE8] border border-[#C59A87] p-4 text-sm text-[#6A3327] space-y-2" aria-label="白发两段染提醒">
                   <div className="flex items-start gap-2">
                     <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" />
-                    <p><strong>白发较多，希望获得{activeVariant?.colorName ?? '自然黑或深棕'}效果：</strong>建议先用纯海娜完成底染，再于同一天使用本色粉。色粉请用约 40°C 温水调制并立即使用，不要长时间静置或使用加热帽。</p>
+                    <p>{twoStepReminder}</p>
                   </div>
                   {onOpenKnowledge && <button type="button" onClick={() => { setActiveProduct(null); onOpenKnowledge(); }} className="ml-6 underline underline-offset-2 font-semibold cursor-pointer">查看完整两段染与科学说明 →</button>}
                 </div>

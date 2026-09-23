@@ -4,9 +4,9 @@ import { AlertTriangle, Beaker, BookOpen, CheckCircle2, Droplets, FlaskConical, 
 export const TWO_STEP_DYE_STEPS = [
   '清洁头发，去除油脂和造型产品。',
   '第一段使用纯海娜底染；Saheli 纯海娜按包装加水调成糊状，并静置约 2 小时。',
-  '将海娜泥均匀覆盖白发，戴塑料帽保持湿润；停留时间以所用海娜产品包装为准。',
+  '将海娜泥均匀覆盖白发，戴塑料帽保持湿润。Saheli 当前包装资料没有标明上头停留时间，因此本站不提供统一数字；如使用其他纯海娜产品，请遵循其包装说明。',
   '用清水冲净海娜泥，并在同一天进行第二段。',
-  '自然黑或深棕色粉加入约 40°C 温水调匀，调好立即使用，不要长时间静置。',
+  '自然黑或深棕包装要求加入约 40°C 温水调匀后涂抹；结合靛蓝染料机理，本站建议调好后尽快使用，不要长时间静置。',
   '戴手套分层涂抹，覆盖塑料帽；不使用加热帽，停留约 60 分钟。',
   '用清水冲洗，不使用洗发水，也不使用吹风机。',
   '预留约 24 小时让颜色逐渐加深；刚冲洗后的颜色不是最终效果。',
@@ -28,7 +28,7 @@ const comparison = [
   {
     title: '含靛蓝的目标色粉',
     icon: Droplets,
-    points: ['自然黑和深棕均含靛蓝叶粉', '使用约 40°C 温水调制', '调好立即使用，不长时间静置', '不额外加热；按包装停留约 60 分钟'],
+    points: ['自然黑和深棕均含靛蓝叶粉', '包装要求使用约 40°C 温水调制', '结合靛蓝机理，建议调好后尽快使用', '不额外加热；按包装停留约 60 分钟'],
   },
 ];
 
@@ -91,7 +91,7 @@ export const PlantHairColorKnowledgePage: React.FC = () => (
           ))}
         </ol>
         <p className="text-xs text-gray-500 border-l-2 border-[#A5A093] pl-3">
-          纯海娜的上头停留时间因产品而异；Saheli 当前包装资料没有给出该数字，本指南不自行补写。请遵循所使用纯海娜产品的包装说明。
+          “静置约 2 小时”是 Saheli 纯海娜调成泥后的染料释放时间，不是上头停留时间。Saheli 当前包装资料没有标明上头停留时间，本站不自行补写。
         </p>
       </section>
 
@@ -131,9 +131,10 @@ export const PlantHairColorKnowledgePage: React.FC = () => (
           <summary className="cursor-pointer font-semibold text-[#5B6346]">查看主要科学资料来源</summary>
           <ul className="mt-3 space-y-2 list-disc pl-5">
             <li><a className="underline" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9692289/" target="_blank" rel="noopener noreferrer">Recent Advancements in Natural Plant Colorants Used for Hair Dye Applications（综述）</a></li>
-            <li><a className="underline" href="https://pubmed.ncbi.nlm.nih.gov/39529213/" target="_blank" rel="noopener noreferrer">Insights into structural and proteomic alterations related to pH-induced changes in hair</a></li>
+            <li><a className="underline" href="https://pubmed.ncbi.nlm.nih.gov/39529213/" target="_blank" rel="noopener noreferrer">Insights into structural and proteomic alterations related to pH-induced changes and protein deamidation in hair</a></li>
             <li><a className="underline" href="https://pubmed.ncbi.nlm.nih.gov/25210332/" target="_blank" rel="noopener noreferrer">The Shampoo pH can Affect the Hair: Myth or Reality?</a></li>
             <li><a className="underline" href="https://patents.google.com/patent/WO2014104301A1/en" target="_blank" rel="noopener noreferrer">Indigo leaf dye chemistry and low-temperature preparation（技术资料）</a></li>
+            <li><a className="underline" href="https://www.jddtonline.info/index.php/jddt/article/view/1479" target="_blank" rel="noopener noreferrer">Estimation of Lawsone Release from Lawsonia inermis Leaf Powder and Dye Uptake on the Hair（辅助实验资料）</a></li>
           </ul>
         </details>
       </section>

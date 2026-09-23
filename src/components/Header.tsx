@@ -85,7 +85,7 @@ export const Header: React.FC<HeaderProps> = ({
 
 
           {/* Mobile Menu Toggle */}
-          <div className="flex sm:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-sm text-[#2C2C2C] hover:bg-[#F2F0E9] transition-colors"
