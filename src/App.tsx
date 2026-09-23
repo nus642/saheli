@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
@@ -7,16 +7,71 @@ import { IngredientAnalysisPage } from './components/IngredientAnalysisPage';
 import { ProductCatalog } from './components/ProductCatalog';
 import { PlantHairColorKnowledgePage } from './components/PlantHairColorKnowledgePage';
 import { ShieldCheck, Sparkles, BookOpen, Factory } from 'lucide-react';
+import { getInitialTab, getPageMetadata, getPathForTab } from './routing';
+
+const SITE_ORIGIN = 'https://hairdye.cn';
+
+function setMetaContent(selector: string, attribute: 'name' | 'property', key: string, content: string) {
+  let element = document.head.querySelector<HTMLMetaElement>(selector);
+  if (!element) {
+    element = document.createElement('meta');
+    element.setAttribute(attribute, key);
+    document.head.appendChild(element);
+  }
+  element.content = content;
+}
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<string>('home');
+  const [activeTab, setActiveTab] = useState<string>(() => getInitialTab(window.location.pathname));
+
+  const navigateToTab = (tab: string) => {
+    if (tab === activeTab) return;
+    window.history.pushState({ tab }, '', getPathForTab(tab));
+    setActiveTab(tab);
+  };
+
+  useEffect(() => {
+    window.history.replaceState({ tab: activeTab }, '', getPathForTab(activeTab));
+
+    const handlePopState = (event: PopStateEvent) => {
+      const tab = typeof event.state?.tab === 'string' ? event.state.tab : getInitialTab(window.location.pathname);
+      setActiveTab(tab);
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  useEffect(() => {
+    const metadata = getPageMetadata(activeTab);
+    const canonicalUrl = `${SITE_ORIGIN}${metadata.path}`;
+    const shareImageUrl = `${SITE_ORIGIN}${metadata.imagePath}`;
+    document.title = metadata.title;
+
+    setMetaContent('meta[name="description"]', 'name', 'description', metadata.description);
+    setMetaContent('meta[property="og:title"]', 'property', 'og:title', metadata.title);
+    setMetaContent('meta[property="og:description"]', 'property', 'og:description', metadata.description);
+    setMetaContent('meta[property="og:type"]', 'property', 'og:type', 'website');
+    setMetaContent('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
+    setMetaContent('meta[property="og:image"]', 'property', 'og:image', shareImageUrl);
+    setMetaContent('meta[name="twitter:card"]', 'name', 'twitter:card', 'summary_large_image');
+
+    let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    canonical.href = canonicalUrl;
+  }, [activeTab]);
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-[#2C2825] font-sans-clean">
       {/* Global Header */}
       <Header
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={navigateToTab}
       />
 
       {/* Main Content Area */}
@@ -25,7 +80,7 @@ export default function App() {
         {activeTab === 'home' && (
           <div className="space-y-12">
             {/* Hero Section */}
-            <Hero setActiveTab={setActiveTab} />
+            <Hero setActiveTab={navigateToTab} />
 
             {/* Core Value Banner */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -73,7 +128,7 @@ export default function App() {
                     Deepak Industries 的企业历史始于 1978 年；Saheli 品牌于 1990 年在印度 Rajasthan 的 Sojat 开始发展。Saheli 希望成为自然护理过程中的伙伴。
                   </p>
                   <button
-                    onClick={() => { setActiveTab('brand'); window.scrollTo(0, 0); }}
+                    onClick={() => { navigateToTab('brand'); window.scrollTo(0, 0); }}
                     className="px-6 py-3 bg-[#5B6346] hover:bg-[#4A5039] text-[#FAF9F6] text-xs uppercase tracking-widest font-semibold flex items-center gap-2 transition-colors cursor-pointer"
                   >
                     <BookOpen className="w-4 h-4 text-[#E5E2D9]" />
@@ -97,7 +152,7 @@ export default function App() {
             </section>
 
             {/* Products Showcase Component */}
-            <ProductCatalog onOpenKnowledge={() => { setActiveTab('knowledge'); window.scrollTo(0, 0); }} />
+            <ProductCatalog onOpenKnowledge={() => { navigateToTab('knowledge'); window.scrollTo(0, 0); }} />
           </div>
         )}
 
@@ -113,7 +168,7 @@ export default function App() {
 
         {/* View 4: Product Catalog View */}
         {activeTab === 'products' && (
-          <ProductCatalog onOpenKnowledge={() => { setActiveTab('knowledge'); window.scrollTo(0, 0); }} />
+          <ProductCatalog onOpenKnowledge={() => { navigateToTab('knowledge'); window.scrollTo(0, 0); }} />
         )}
 
         {/* View 5: Science-based Plant Hair Color Knowledge */}
@@ -123,7 +178,7 @@ export default function App() {
       </main>
 
       {/* Global Footer */}
-      <Footer setActiveTab={setActiveTab} />
+      <Footer setActiveTab={navigateToTab} />
     </div>
   );
 }
