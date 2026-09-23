@@ -75,6 +75,11 @@ export const Footer: React.FC<FooterProps> = ({
                   • 植物产品与配方指南 (Products)
                 </button>
               </li>
+              <li>
+                <button onClick={() => { setActiveTab('knowledge'); window.scrollTo(0, 0); }} className="hover:text-white transition-colors cursor-pointer">
+                  • 植物染发知识与两段染指南
+                </button>
+              </li>
             </ul>
           </div>
 

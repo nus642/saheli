@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { INITIAL_PRODUCTS } from '../data/initialData';
-import { getDefaultVariant, getProductDetails, getProductImageAlt } from './ProductCatalog';
+import { getDefaultVariant, getProductDetails, getProductImageAlt, getTwoStepDyeReminder } from './ProductCatalog';
 
 const hairColor = INITIAL_PRODUCTS.find((product) => product.id === 'saheli-herbal-hair-color-100g');
 
@@ -37,4 +37,16 @@ test('detail selection switches all independent fields to dark brown and back', 
   assert.equal(softBlack.imagePaths[0], '/assets/products/saheli-soft-black-100g.jpg');
   assert.equal(softBlack.ingredientsChinese, '靛蓝叶粉、海娜叶粉、余甘子果粉、儿茶粉、芦荟叶粉');
   assert.match(softBlack.purchaseUrl, /Soft%20Black/);
+});
+
+test('two-step reminder is limited to color variants and follows the selected color', () => {
+  const henna = INITIAL_PRODUCTS.find((product) => product.id === 'saheli-organic-henna-227g');
+  const softBlack = hairColor.variants.find(({ id }) => id === 'soft-black');
+  const darkBrown = hairColor.variants.find(({ id }) => id === 'dark-brown');
+  assert.ok(henna);
+  assert.equal(getTwoStepDyeReminder(henna), null);
+  assert.match(getTwoStepDyeReminder(hairColor, softBlack) ?? '', /自然黑效果/);
+  assert.doesNotMatch(getTwoStepDyeReminder(hairColor, softBlack) ?? '', /深棕效果/);
+  assert.match(getTwoStepDyeReminder(hairColor, darkBrown) ?? '', /深棕效果/);
+  assert.doesNotMatch(getTwoStepDyeReminder(hairColor, darkBrown) ?? '', /自然黑效果/);
 });

@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { BrandStoryPage } from './components/BrandStoryPage';
 import { IngredientAnalysisPage } from './components/IngredientAnalysisPage';
 import { ProductCatalog } from './components/ProductCatalog';
+import { PlantHairColorKnowledgePage } from './components/PlantHairColorKnowledgePage';
 import { ShieldCheck, Sparkles, BookOpen, Factory } from 'lucide-react';
 
 export default function App() {
@@ -96,7 +97,7 @@ export default function App() {
             </section>
 
             {/* Products Showcase Component */}
-            <ProductCatalog />
+            <ProductCatalog onOpenKnowledge={() => { setActiveTab('knowledge'); window.scrollTo(0, 0); }} />
           </div>
         )}
 
@@ -112,7 +113,12 @@ export default function App() {
 
         {/* View 4: Product Catalog View */}
         {activeTab === 'products' && (
-          <ProductCatalog />
+          <ProductCatalog onOpenKnowledge={() => { setActiveTab('knowledge'); window.scrollTo(0, 0); }} />
+        )}
+
+        {/* View 5: Science-based Plant Hair Color Knowledge */}
+        {activeTab === 'knowledge' && (
+          <PlantHairColorKnowledgePage />
         )}
       </main>
 
