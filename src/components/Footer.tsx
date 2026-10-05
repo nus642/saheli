@@ -1,5 +1,5 @@
 import React from 'react';
-import { ExternalLink, Leaf, ShieldCheck, Factory, Sparkles } from 'lucide-react';
+import { Factory, Leaf, MessageCircle, Phone, ShieldCheck, Sparkles } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 interface FooterProps {
@@ -83,10 +83,10 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Partner Brands & Store */}
-          <div className="md:col-span-4 space-y-3">
+          {/* Partner Brands & Contact */}
+          <div className="md:col-span-4 space-y-3" id="contact">
             <h4 className="font-serif font-bold text-white text-base border-b border-white/10 pb-2 uppercase tracking-wider">
-              合作品牌
+              合作品牌与联系
             </h4>
             <div className="bg-white/5 p-4 border border-white/10 text-sm text-[#E8E2D6] space-y-3">
               {siteConfig.brands.partners.map((brand) => (
@@ -96,15 +96,21 @@ export const Footer: React.FC<FooterProps> = ({
                 </div>
               ))}
             </div>
-            <a
-              href={siteConfig.taobaoStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 px-3 bg-[#5B6346] hover:bg-[#4A5039] text-white text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-1.5 transition-colors"
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>前往淘宝店铺</span>
-            </a>
+            <div className="bg-[#5B6346]/25 p-4 border border-[#5B6346] text-sm text-[#E8E2D6] space-y-3">
+              <p className="font-serif font-bold text-white">植物染知识与使用交流</p>
+              <a
+                href={`tel:${siteConfig.contact.phone}`}
+                className="flex items-center gap-2 text-white hover:text-[#D9D2C2] transition-colors"
+              >
+                <Phone className="w-4 h-4 shrink-0" />
+                <span>电话：{siteConfig.contact.displayPhone}</span>
+              </a>
+              <div className="flex items-center gap-2 text-white">
+                <MessageCircle className="w-4 h-4 shrink-0" />
+                <span>微信：{siteConfig.contact.wechat}</span>
+              </div>
+              <p className="text-xs leading-relaxed text-gray-400">电话与微信同号。本站提供知识分享与使用交流，不提供在线销售。</p>
+            </div>
           </div>
         </div>
 

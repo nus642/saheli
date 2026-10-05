@@ -16,6 +16,9 @@ export const siteConfig = {
       { en: 'Ayur', zh: '阿育', role: '合作品牌' },
     ],
   },
-  taobaoStoreUrl:
-    'https://1kbqzgp9java7z653535rattamnhltb.taobao.com/?spm=a1z10.5-c-s.0.0.2f1c72b9UUQihX',
+  contact: {
+    phone: '16698001319',
+    displayPhone: '166 9800 1319',
+    wechat: '16698001319',
+  },
 } as const;
