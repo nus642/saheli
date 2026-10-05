@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlertTriangle, ExternalLink, Eye, X } from 'lucide-react';
+import { AlertTriangle, Eye, X } from 'lucide-react';
 import { INITIAL_PRODUCTS } from '../data/initialData';
 import { Product, ProductDetails, ProductVariant } from '../types';
 
@@ -123,16 +123,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenKnowledge 
                       {product.tags.map((tag) => <span key={tag} className="bg-[#F2F0E9] text-[#2C2C2C] border border-[#D8D4C7] text-[10px] font-medium px-2 py-0.5">{tag}</span>)}
                     </div>
                   )}
-                  <div className="pt-3 border-t border-[#E5E2D9] flex flex-wrap items-center justify-between gap-3">
-                    <div><span className="text-xs text-gray-400">中国售价：</span><span className="text-xl font-bold text-[#5B6346] font-serif">¥{details.price}</span></div>
-                    <div className="flex gap-2">
-                      <button onClick={() => openDetails(product)} className="px-3 py-2 border border-[#5B6346] text-[#5B6346] text-xs font-semibold flex items-center gap-1 hover:bg-[#F2F0E9] transition-colors cursor-pointer">
-                        <Eye className="w-3.5 h-3.5" />查看详情
-                      </button>
-                      <a href={details.purchaseUrl} target="_blank" rel="noopener noreferrer" className="px-3 py-2 bg-[#5B6346] hover:bg-[#4A5039] text-white text-xs font-semibold flex items-center gap-1 transition-colors">
-                        前往淘宝查看<ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    </div>
+                  <div className="pt-3 border-t border-[#E5E2D9] flex items-center justify-end">
+                    <button onClick={() => openDetails(product)} className="px-3 py-2 border border-[#5B6346] text-[#5B6346] text-xs font-semibold flex items-center gap-1 hover:bg-[#F2F0E9] transition-colors cursor-pointer">
+                      <Eye className="w-3.5 h-3.5" />查看资料
+                    </button>
                   </div>
                 </div>
               </article>
@@ -158,7 +152,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenKnowledge 
                   <span className="text-xs font-mono text-[#5B6346] font-bold uppercase tracking-wider">{activeVariant?.packagingEnglishName ?? activeProduct.englishName}</span>
                   <h3 id="product-detail-title" className="text-xl font-serif text-[#2C2C2C]">{activeProduct.name}{activeVariant && `｜${activeVariant.colorName}`}</h3>
                   <p className="text-xs text-gray-500 mt-1">{activeProduct.brand} · {activeProduct.subName}</p>
-                  <div className="flex items-center gap-2 mt-2"><span className="text-lg font-bold text-[#5B6346] font-serif">¥{activeDetails.price}</span><span className="text-xs text-gray-500 font-mono">规格：{activeProduct.weight}</span></div>
+                  <div className="flex items-center gap-2 mt-2"><span className="text-xs text-gray-500 font-mono">规格：{activeProduct.weight}</span></div>
                 </div>
               </div>
 
@@ -202,9 +196,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({ onOpenKnowledge 
               <div className="space-y-2"><h4 className="font-serif font-bold text-[#2C2C2C] text-sm">配料</h4><div className="bg-white p-4 border border-[#E5E2D9] text-sm text-gray-600 space-y-2"><p><strong className="text-[#5B6346]">配料原文：</strong>{activeDetails.ingredientOriginal}</p><p><strong className="text-[#5B6346]">中文配料：</strong>{activeDetails.ingredientsChinese}</p>{activeDetails.origin && <p><strong className="text-[#5B6346]">产地：</strong>{activeDetails.origin}</p>}</div></div>
               <div className="space-y-2"><h4 className="font-serif font-bold text-[#2C2C2C] text-sm">染发使用说明</h4><p className="bg-white p-4 border border-[#E5E2D9] text-sm text-gray-600 leading-relaxed">{activeDetails.usage}</p></div>
               {activeDetails.certification && <div className="space-y-2"><h4 className="font-serif font-bold text-[#2C2C2C] text-sm">认证范围说明</h4><p className="bg-white p-4 border border-[#E5E2D9] text-sm text-gray-600 leading-relaxed">{activeDetails.certification}</p></div>}
-              <a href={activeDetails.purchaseUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto px-5 py-3 bg-[#5B6346] hover:bg-[#4A5039] text-white text-sm font-semibold flex items-center justify-center gap-2 transition-colors">
-                前往淘宝查看{activeVariant && `（${activeVariant.colorName}）`}<ExternalLink className="w-4 h-4" />
-              </a>
+              <p className="text-xs text-gray-500 border-t border-[#E5E2D9] pt-4">本页用于产品资料与使用知识展示，不提供在线销售。</p>
             </div>
           </div>
         )}
